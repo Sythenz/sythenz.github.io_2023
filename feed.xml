@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-20T15:33:27+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Codekitten.me</title><subtitle>Tools and tutorials created by Alessa Baker for Unreal Engine.</subtitle><author><name>Alessa Baker</name></author><entry><title type="html">Anatomy of a Widget</title><link href="http://localhost:4000/Anatomy-Of-A-Widget/" rel="alternate" type="text/html" title="Anatomy of a Widget" /><published>2022-05-20T00:00:00+02:00</published><updated>2022-05-20T00:00:00+02:00</updated><id>http://localhost:4000/Anatomy-Of-A-Widget</id><content type="html" xml:base="http://localhost:4000/Anatomy-Of-A-Widget/"><![CDATA[<h1 id="welcome">Welcome</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-30T01:29:26+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alessa Baker</title><subtitle>Tools and tutorials created by Alessa Baker for Unreal Engine.</subtitle><author><name>Alessa Baker</name></author><entry><title type="html">Anatomy of a Widget</title><link href="http://localhost:4000/Anatomy-Of-A-Widget/" rel="alternate" type="text/html" title="Anatomy of a Widget" /><published>2022-05-20T00:00:00+02:00</published><updated>2022-05-20T00:00:00+02:00</updated><id>http://localhost:4000/Anatomy-Of-A-Widget</id><content type="html" xml:base="http://localhost:4000/Anatomy-Of-A-Widget/"><![CDATA[<h2 id="welcome">Welcome</h2>
 
-<p><strong>Hello world</strong>, this is my first Jekyll blog post.</p>
+<p>So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.</p>
 
-<p>I hope you like it!</p>]]></content><author><name>Alessa Baker</name></author><summary type="html"><![CDATA[Welcome]]></summary></entry></feed>
+<p>To start with this tutorial, let’s create a C++ class deriving from UObject as SCompoundWidget, the class we really want to inherit from doesn’t appear in the Choose Parent Class list in editor.</p>
+
+<p>Next! Let’s use the template below, this is a standard template for any widget for Slate.</p>
+
+<p>Obviously, you should name the class whatever you’d like, here I’m just using an arbitrary name of SNotificationButtons as it will be used in another tutorial.</p>
+
+<script src="https://gist.github.com/Sythenz/6f3dcf97583503d1d5acdd0b361e6624.js"></script>
+
+<p><strong>SCompoundWidget:</strong> This widget type is pretty much a raw, internal widget that isn’t exposed to UMG and has a construct method which includes a ChildSlot member. ChildSlot becomes out main area to write our slate code for this widget.</p>
+
+<p><strong>SLATE_BEGIN_ARGS():</strong> This is a macro that creates a struct of variables and exposes them to InArgs in our construct function. On line 17, you can define defaults for each argument setup by prefixing the argument name with _</p>
+
+<p><strong>SLATE_ARGUMENT():</strong> Is a macro to declare a slate argument/parameter, Arguments can only be values however you can also use SLATE_ATTRIBUTE() and pass in a function instead if you so choose.</p>
+
+<p><strong>SLATE_END_ARGS()</strong> is quite literally a closing brace }. It just closes of the struct created by SLATE_BEGIN_ARGS().</p>
+
+<p>Let’s now setup our .cpp file and take a look at the construct method for SCompoundWidgets.</p>
+
+<script src="https://gist.github.com/Sythenz/35a5966261345f9cae5be31b56499e56.js"></script>
+
+<p>The first thing we’ll do is setup a standard Localization text namespace, just for some string wrangling later on.</p>
+
+<p>Then we have our two Macros:
+<strong>BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong> and <strong>END_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong></p>
+
+<p>these super long macros basically handle whether or not pragma is optimized depending on the platform and the build type. Honestly, they are magic, just wrap them around your Construct function ❤ :P</p>
+
+<p>Our first line in our construct method, line 13 is taking the argument set by SLATE_ARGUMENT back in our header file, and assigning it to the WidgetName method.</p>
+
+<p>In order to use this after, simply use WidgetName.Get(), as the TAttribute class has a getter that we should pull from.</p>
+
+<h2 id="child-slot">Child Slot</h2>
+
+<p>The child slot of a SCompoundWidget is where the magic happens. I recommend looking at or searching for “ChildSlot” across UE4’s code base to get an idea of how slate code is structured. But essentially, <strong>SNew()</strong> and <strong>SAssignNew()</strong> are the two main widget creation methods and all things considered Slate is a little like JSON in syntax.</p>
+
+<p><strong>SNew()</strong> can be considered ‘create and forget’ as in, you spawn a widget without planning to access it later.</p>
+
+<p><strong>SAssignNew()</strong> will create a widget of class, and can then be saved for later in a member. The example below creates an SBorder widget and saves it as a shared pointer in the header.</p>
+
+<script src="https://gist.github.com/Sythenz/d04be255ea7b7bb29f5db21e1958295e.js"></script>
+
+<p>This isn’t going to be a slate tutorial, however I plan on creating one on syntax and going a little more in depth — but then, all tutorials I’m doing will have some manner of Slate used and you can pick up more from future tutorials.</p>
+
+<p>Lastly, let’s talk creation! So in another area say we spawn our widget using the SNew() Method, any of the arguments we specify in the header are now accessible as any of the .parameters written underneath like so:</p>
+
+<script src="https://gist.github.com/Sythenz/f7f72e0f63851812edd3f662a53db0cd.js"></script>
+
+<p>One other note on slate. It’s picky, I mean… Really, really picky about formatting. VS will indent when you don’t want it to, and good luck pasting slate code. What I end up doing is pasting my slate, and then doing one Ctrl+Z to remove the ‘fixed’ indentation that VS applies.</p>
+
+<p>If someone has some sort of VS extension that correctly handles Slate specific formatting please DM me on Twitter or Discord! ❤</p>
+
+<p>So that’s it! This is the basics of an SCompoundWidget, I will be referring back to this whenever I’m creating a widget in another tutorial and should prove to be a helpful resource if you need a quick template yourself.</p>
+
+<p>Alessa ❤</p>
+
+<p>I hope you found this useful!
+If you did, consider supporting on <a href="https://ko-fi.com/Codekitten">Ko-Fi</a> or <a href="https://www.patreon.com/codekitten">Patreon.</a></p>]]></content><author><name>Alessa Baker</name></author><summary type="html"><![CDATA[Welcome]]></summary></entry></feed>
