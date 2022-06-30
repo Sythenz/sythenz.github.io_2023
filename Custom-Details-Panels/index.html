@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Anatomy of a Widget -</title>
-<meta name="description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
+<!-- begin _includes/seo.html --><title>Custom Details Panels in Unreal Engine (FPropertyEditorModule) -</title>
+<meta name="description" content="In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.">
 
 
   <meta name="author" content="Alessa Baker">
@@ -22,20 +22,20 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="">
-<meta property="og:title" content="Anatomy of a Widget">
-<meta property="og:url" content="http://localhost:4000/Anatomy-Of-A-Widget/">
+<meta property="og:title" content="Custom Details Panels in Unreal Engine (FPropertyEditorModule)">
+<meta property="og:url" content="http://localhost:4000/Custom-Details-Panels/">
 
 
-  <meta property="og:description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
+  <meta property="og:description" content="In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.">
 
 
 
 
 
   <meta name="twitter:site" content="@Codekittah">
-  <meta name="twitter:title" content="Anatomy of a Widget">
-  <meta name="twitter:description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
-  <meta name="twitter:url" content="http://localhost:4000/Anatomy-Of-A-Widget/">
+  <meta name="twitter:title" content="Custom Details Panels in Unreal Engine (FPropertyEditorModule)">
+  <meta name="twitter:description" content="In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.">
+  <meta name="twitter:url" content="http://localhost:4000/Custom-Details-Panels/">
 
   
     <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-05-21T00:00:00+02:00">
+  <meta property="article:published_time" content="2021-05-13T00:00:00+02:00">
 
 
 
@@ -57,7 +57,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/Anatomy-Of-A-Widget/">
+<link rel="canonical" href="http://localhost:4000/Custom-Details-Panels/">
 
 
 
@@ -274,16 +274,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Anatomy of a Widget">
-    <meta itemprop="description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
-    <meta itemprop="datePublished" content="2021-05-21T00:00:00+02:00">
+    <meta itemprop="headline" content="Custom Details Panels in Unreal Engine (FPropertyEditorModule)">
+    <meta itemprop="description" content="In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.">
+    <meta itemprop="datePublished" content="2021-05-13T00:00:00+02:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/Anatomy-Of-A-Widget/" class="u-url" itemprop="url">Anatomy of a Widget
+            <a href="http://localhost:4000/Custom-Details-Panels/" class="u-url" itemprop="url">Custom Details Panels in Unreal Engine (FPropertyEditorModule)
 </a>
           </h1>
           
@@ -300,7 +300,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          2 minute read
         
       </span>
     
@@ -312,64 +312,57 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.</p>
+        <p>In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.</p>
 
-<p>To start with this tutorial, let’s create a C++ class deriving from UObject as SCompoundWidget, the class we really want to inherit from doesn’t appear in the Choose Parent Class list in editor.</p>
+<p>For this project, we are going to use UE4.24 but you can use any version you’d like. Let’s go ahead and create a new plugin, and we will use the “Editor Standalone Window” plugin template.</p>
 
-<h2 id="compound-widgets">Compound Widgets</h2>
+<p>Once you have reloaded the Visual Studio Project, open the editor again and create a new default UObject class under the plugin module. I’ve called this class UCustomSettings, but you can name it whatever you’d like.</p>
 
-<p><img src="/assets/images/parentclass.png" alt="Creating a Parent Class" /></p>
+<p><img src="/assets/images/customdetails_structure.png" alt="Our Visual Studio plugin structure" /></p>
 
-<p>Next! Let’s use the template below, this is a standard template for any widget for Slate.</p>
+<h2 id="specifying-our-custom-details">Specifying our custom Details</h2>
 
-<p>Obviously, you should name the class whatever you’d like, here I’m just using an arbitrary name of SNotificationButtons as it will be used in another tutorial.</p>
+<p>Creating our Custom Details panel is simple! Let’s go to our CustomSettings.h file and write up some properties to display.</p>
 
-<script src="https://gist.github.com/Sythenz/6f3dcf97583503d1d5acdd0b361e6624.js"></script>
+<script src="https://gist.github.com/Sythenz/2263bc3e6126e8c7310283a38189d13c.js"></script>
 
-<p><strong>SCompoundWidget:</strong> This widget type is pretty much a raw, internal widget that isn’t exposed to UMG and has a construct method which includes a ChildSlot member. ChildSlot becomes out main area to write our slate code for this widget.</p>
+<p>For our Custom Details panel, all specifiers in a UPROPERTY() macro will be evaluated, so you can organize and split into categories, or use things like AdvancedDisplay to hide certain properties. For a list of full UPROPERTY() macro settings:</p>
 
-<p><strong>SLATE_BEGIN_ARGS():</strong> This is a macro that creates a struct of variables and exposes them to InArgs in our construct function. On line 17, you can define defaults for each argument setup by prefixing the argument name with _</p>
+<p><a href="https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/GameplayArchitecture/Properties/Specifiers/">UProperty Specifiers</a></p>
 
-<p><strong>SLATE_ARGUMENT():</strong> Is a macro to declare a slate argument/parameter, Arguments can only be values however you can also use SLATE_ATTRIBUTE() and pass in a function instead if you so choose.</p>
+<h2 id="creating-our-details-widget">Creating our Details Widget</h2>
+<p>Next, let’s work on creating our Details View widget. The Details View widget is created and set by the FPropertyEditorModule and will handle the display and creation of our Custom Details Panel.</p>
 
-<p><strong>SLATE_END_ARGS()</strong> is quite literally a closing brace }. It just closes of the struct created by SLATE_BEGIN_ARGS().</p>
+<p>In our main Plugin Module class we will create two pointers to our CustomSettings class and one to store our created Details View widget.</p>
 
-<p>Let’s now setup our .cpp file and take a look at the construct method for SCompoundWidgets.</p>
+<script src="https://gist.github.com/Sythenz/e84df14a567b8b1afb4875c9fe672518.js"></script>
 
-<script src="https://gist.github.com/Sythenz/35a5966261345f9cae5be31b56499e56.js"></script>
+<p>I’ve added them under the OnSpawnPluginTab function created with our template, as we will do our instantiation in that class.</p>
 
-<p>The first thing we’ll do is setup a standard Localization text namespace, just for some string wrangling later on.</p>
+<p>Here is the important part! Let’s add this in, and then I’ll go through what is happening.</p>
 
-<p>Then we have our two Macros:
-<strong>BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong> and <strong>END_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong></p>
+<script src="https://gist.github.com/Sythenz/3caa2cadb9f4bf6909ec65f7785f63c1.js"></script>
 
-<p>these super long macros basically handle whether or not pragma is optimized depending on the platform and the build type. Honestly, they are magic, just wrap them around your Construct function ❤ :P</p>
+<p>First we create our Object whenever the tab is spawned — you can place this elsewhere to prevent our settings from refreshing everytime the tab is created, but for now. We’ll just create it here.</p>
 
-<p>Our first line in our construct method, line 13 is taking the argument set by SLATE_ARGUMENT back in our header file, and assigning it to the WidgetName method.</p>
+<p>We then load our Property Editor Module! The module itself can be used for more than just creating Custom Details Panels.</p>
 
-<p>In order to use this after, simply use WidgetName.Get(), as the TAttribute class has a getter that we should pull from.</p>
+<p><a href="https://docs.unrealengine.com/4.26/en-US/API/Editor/PropertyEditor/FPropertyEditorModule/">FPropertyEditorModule</a></p>
 
-<h2 id="child-slot">Child Slot</h2>
+<p>Next up is FDetailsViewArgs, this is how we control how our Details Panel is displayed, things like hiding the search box at the top. One argument we’ll pass in here is a tip that appears by default at the top requesting the user select an object. We don’t need this, so we hide it.</p>
 
-<p>The child slot of a SCompoundWidget is where the magic happens. I recommend looking at or searching for “ChildSlot” across UE4’s code base to get an idea of how slate code is structured. But essentially, <strong>SNew()</strong> and <strong>SAssignNew()</strong> are the two main widget creation methods and all things considered Slate is a little like JSON in syntax.</p>
+<p>We then create our PropertyWidget, this creates the slate widget itself and informs the editor that the widget has been instantiated.</p>
 
-<p><strong>SNew()</strong> can be considered ‘create and forget’ as in, you spawn a widget without planning to access it later.</p>
+<p>The most important part is line 17, here we tell the DetailsView widget to actually use the UObject class we’ve created and to pull the properties from there.</p>
 
-<p><strong>SAssignNew()</strong> will create a widget of class, and can then be saved for later in a member. The example below creates an SBorder widget and saves it as a shared pointer in the header.</p>
+<p>Then we just add it to our slate on Line 23!</p>
 
-<script src="https://gist.github.com/Sythenz/d04be255ea7b7bb29f5db21e1958295e.js"></script>
+<h2 id="our-details-panel">Our Details Panel</h2>
+<p>Once everything is done — you will see your new Custom Details panel in the Custom Editor Window!</p>
 
-<p>This isn’t going to be a slate tutorial, however I plan on creating one on syntax and going a little more in depth — but then, all tutorials I’m doing will have some manner of Slate used and you can pick up more from future tutorials.</p>
+<p><img src="/assets/images/customdetailsexample.png" alt="Our Custom Details complete!" /></p>
 
-<p>Lastly, let’s talk creation! So in another area say we spawn our widget using the SNew() Method, any of the arguments we specify in the header are now accessible as any of the .parameters written underneath like so:</p>
-
-<script src="https://gist.github.com/Sythenz/f7f72e0f63851812edd3f662a53db0cd.js"></script>
-
-<p>One other note on slate. It’s picky, I mean… Really, really picky about formatting. VS will indent when you don’t want it to, and good luck pasting slate code. What I end up doing is pasting my slate, and then doing one Ctrl+Z to remove the ‘fixed’ indentation that VS applies.</p>
-
-<p>If someone has some sort of VS extension that correctly handles Slate specific formatting please DM me on Twitter or Discord! ❤</p>
-
-<p>So that’s it! This is the basics of an SCompoundWidget, I will be referring back to this whenever I’m creating a widget in another tutorial and should prove to be a helpful resource if you need a quick template yourself.</p>
+<p>For the full example, please check out the Github repository here!</p>
 
 <p>Alessa❤️</p>
 
@@ -386,18 +379,17 @@ If you did, consider supporting on <a href="https://ko-fi.com/Codekitten">Ko-Fi<
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-05-21T00:00:00+02:00">May 21, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-05-13T00:00:00+02:00">May 13, 2021</time></p>
 
       </footer>
 
       
   <nav class="pagination">
     
-      <a href="/Custom-Details-Panels/" class="pagination--pager" title="Custom Details Panels in Unreal Engine (FPropertyEditorModule)
-">Previous</a>
+      <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="/Notifications-In-Unreal-Engine-Part1/" class="pagination--pager" title="Notifications in Unreal Engine (Part 1 — Starting Point)
+      <a href="/Anatomy-Of-A-Widget/" class="pagination--pager" title="Anatomy of a Widget
 ">Next</a>
     
   </nav>
@@ -500,7 +492,7 @@ If you did, consider supporting on <a href="https://ko-fi.com/Codekitten">Ko-Fi<
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/Custom-Details-Panels/" rel="permalink">Custom Details Panels in Unreal Engine (FPropertyEditorModule)
+        <a href="/Anatomy-Of-A-Widget/" rel="permalink">Anatomy of a Widget
 </a>
       
     </h2>
@@ -518,14 +510,14 @@ If you did, consider supporting on <a href="https://ko-fi.com/Codekitten">Ko-Fi<
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 minute read
+          3 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed ...</p>
+    <p class="archive__item-excerpt" itemprop="description">So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engi...</p>
   </article>
 </div>
 

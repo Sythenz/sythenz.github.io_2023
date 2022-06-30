@@ -1,0 +1,611 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling) -</title>
+<meta name="description" content="In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.">
+
+
+  <meta name="author" content="Alessa Baker">
+  
+  <meta property="article:author" content="Alessa Baker">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling)">
+<meta property="og:url" content="http://localhost:4000/Notifications-In-Unreal-Engine-Part-2/">
+
+
+  <meta property="og:description" content="In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.">
+
+
+
+
+
+  <meta name="twitter:site" content="@Codekittah">
+  <meta name="twitter:title" content="Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling)">
+  <meta name="twitter:description" content="In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.">
+  <meta name="twitter:url" content="http://localhost:4000/Notifications-In-Unreal-Engine-Part-2/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-08-10T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Notifications-In-Unreal-Engine-Part-2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alessa Baker",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.svg" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tutorials/">Tutorials</a>
+            </li><li class="masthead__menu-item">
+              <a href="/youtube/">YouTube</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.jpg" alt="Alessa Baker" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Alessa Baker</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Shader Witch, Technical Artist and cutesie goth who loves kittens. ❤️</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/Codekittah" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Sythenz" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling)">
+    <meta itemprop="description" content="In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.">
+    <meta itemprop="datePublished" content="2021-08-10T00:00:00+02:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/Notifications-In-Unreal-Engine-Part-2/" class="u-url" itemprop="url">Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.</p>
+
+<p>If you haven’t followed the first tutorial, please give it a look, it has a lot of what we’ve already set up as foundation for this second tutorial and we will be continuing from that point.</p>
+
+<p>Let’s continue then! Here is the notification we will be creating.</p>
+
+<p><img src="/assets/images/notifications_cantdoathing.png" alt="What we will be creating" /></p>
+
+<p>Before we get started — because we will be dealing with Editor Styling, we need to add this module to our Build.cs file of our plugin so we can access it.</p>
+
+<p>YourPlugin.Build.cs is found in your main plugin directory, and is a file responsible for informing the Unreal Build Tool which modules your plugin depends on and will statically link with.</p>
+
+<p>Go ahead and add line 13.</p>
+
+<script src="https://gist.github.com/Sythenz/ea092dce7629f0dfc4aea7019a2d217c.js"></script>
+
+<h3 id="notification--slate-styling">Notification / Slate Styling</h3>
+<p>Here is the code we will be adding to our <em>SNoficiationButtonWidget</em>, as before let’s go ahead and add this and then we can break it down and talk a little bit more about what’s going on.</p>
+
+<p>.h — added under public:</p>
+
+<script src="https://gist.github.com/Sythenz/8c1b724cedb80305b3a4189bb8863971.js"></script>
+
+<p>.cpp</p>
+
+<script src="https://gist.github.com/Sythenz/b67be14e76ec6d6543465edf413d1f3a.js"></script>
+
+<p>The first thing we do, which hopefully you’ve become somewhat accustomed to, is adding a button within a new SHorizontalBox slot and we declare another method in our header and cpp file (Lines 19–25 cpp). This time we call it <em>SpawnNotificationWithLink()</em>, and it is also an FReply method same as before.</p>
+
+<p>Simple stuff — let’s talk styling!</p>
+
+<p>So earlier, we added the EditorStyles module to our build.cs file, this means we can now access any of the iconography, widget brushes and fonts from Unreal Engine. We do this on line 45 in our cpp, but using the GetBrush method of the <em>FEditorStyle</em> namespace.</p>
+
+<p>A quick note here, an alternative you can use is FCoreStyle, but I believe this isn’t the recommended way. Most of the editor relies on the use of FEditorStyle and the EditorStyle module. Where FCoreStyle is used for runtime, FEditorStyle is the Editor Module.</p>
+
+<p>The FEditorStyle module itself just wraps and makes most of SlateCore easily accessible, but for a list of any of the brushes that are available you can check out. All you need to do is reference by string.</p>
+
+<p><em>\Engine\Source\Runtime\SlateCore\Private\Styling\CoreStyle.cpp</em></p>
+
+<p><em>Side Note:</em> Also! A super fun fact that I was surprised at when researching this. Because I come from a background in web development, did you know that Unreal Engine utilizes the amazing Font Awesome resource?</p>
+
+<p>For a full list of all icons included from Font Awesome, you can find them here: <em>Engine\Source\Editor\EditorStyle\Public\EditorFontGlyphs.h</em></p>
+
+<p><img src="/assets/images/notifications_fontawesome.png" alt="(A screenshot of the Font Awesome EditorFontGlyphs.h)" /></p>
+
+<p>For now, this is all we’ll talk about styling. You may have noticed, if this is your first plugin the default Editor Standalone Window Template in Unreal has it’s own Style.cpp when created — I’ll dedicate another article to this specifically for the sake of brevity.</p>
+
+<p>(An example of a notification using the “MessageLog.Note” icon instead) notifications_messagelognote.png</p>
+
+<h3 id="hyperlinks">Hyperlinks!</h3>
+<p>So let’s go ahead and add our next section of code to our cpp. In our same <em>SpawnNotificationWithLink()</em> method, let’s add our code for Hyperlinks and then go through it.</p>
+
+<script src="https://gist.github.com/Sythenz/b14d471b4cba417a29023bcb80fdfbe9.js"></script>
+
+<p>Hyperlinks are passed as a delegate into the <em>FNotificationInfo</em> struct via <em>.Hyperlink</em>, these can be a call to another method, but for the sake of simplicity here, we use a lambda.</p>
+
+<p>A lambda, is simply put a small function that is called in-line where it is defined. It can take in parameters, but if this is a new concept for you just know that the contents of this function gets called when our Hyperlink is pressed. For more information on Lambda functions:</p>
+
+<p><a href="https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp?view=msvc-160">Microsoft Lambda Expressions Reference</a></p>
+
+<p>In this lambda all we do is create a string to a URL and we use FPlatformProcess, a super useful module for handling generalized OS actions.
+It abstracts to FPlatformProcess to handle Android, IOS, Windows, Mac, HoloLens etc…</p>
+
+<p>It’s got a really nice function that opens a browser window with the specified URL, cool right? :3</p>
+
+<p>Last thing we do is define the text that we want to display in editor. This is done by passing a localized string into the struct via HyperlinkText, nothing crazy!</p>
+
+<p><img src="/assets/images/notification_createdlinks.png" alt="(What we’ve created! ❤)" /></p>
+
+<p>And that’s it! We’ve now created a cool notification that links to Unreal Engine documentation in just a couple lines of code with some cool styling.</p>
+
+<h3 id="github-respository">Github respository</h3>
+<p>Here’s a link to the full examples for all three notification types.</p>
+
+<p><a href="https://github.com/Sythenz/UnrealNotificationsExample">https://github.com/Sythenz/UnrealNotificationsExample</a></p>
+
+<p>Alessa❤️</p>
+
+<p>I hope you found this useful!
+If you did, consider supporting on <a href="https://ko-fi.com/Codekitten">Ko-Fi</a> or <a href="https://www.patreon.com/codekitten">Patreon.</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-08-10T00:00:00+02:00">August 10, 2021</time></p>
+
+      </footer>
+
+      
+  <nav class="pagination">
+    
+      <a href="/Notifications-In-Unreal-Engine-Part1/" class="pagination--pager" title="Notifications in Unreal Engine (Part 1 — Starting Point)
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Notifications-In-Unreal-Engine-Part1/" rel="permalink">Notifications in Unreal Engine (Part 1 — Starting Point)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal as...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Anatomy-Of-A-Widget/" rel="permalink">Anatomy of a Widget
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engi...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Custom-Details-Panels/" rel="permalink">Custom Details Panels in Unreal Engine (FPropertyEditorModule)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Alessa Baker. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
