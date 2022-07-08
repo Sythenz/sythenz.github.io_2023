@@ -1,1 +1,1 @@
-Sitemap: https://codekitten.me/sitemap.xml
+Sitemap: http://codekitten.me/sitemap.xml
