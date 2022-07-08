@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-08T16:11:22+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alessa Baker</title><subtitle>Tools and tutorials created by Alessa Baker for Unreal Engine.</subtitle><author><name>Alessa Baker</name></author><entry><title type="html">Chorus (2021)</title><link href="http://localhost:4000/portfolio/Chorus/" rel="alternate" type="text/html" title="Chorus (2021)" /><published>2022-07-04T00:00:00+02:00</published><updated>2022-07-04T00:00:00+02:00</updated><id>http://localhost:4000/portfolio/Chorus</id><content type="html" xml:base="http://localhost:4000/portfolio/Chorus/"><![CDATA[<h2 id="responsibilities">Responsibilities</h2>
+
+<ul>
+  <li>Creating tools for optimization and performance analysis both in Unreal (Slate &amp; C++), Python, and Mysql (Grafana)</li>
+  <li>Creating tools to assist artists with optimization pipelines, Quality-Of-Life engine features, LOD Generation Tools etc (Python, Slate &amp; C++).</li>
+  <li>Resident Shader Witch 🧹 working for Visual Effects, Cinematics and gameplay elements. Everything from Holograms to Ghosts and Vertex Shader spookiness.</li>
+  <li>UI Shader work supporting Chormatic Abberation, Glitching, Parabolic Distortion (Visor style), Blurring and local animations.</li>
+  <li>Pseudo Forward Renderer in shaders for the 3D Map, and automated pipeline to generate LODs from existing levels for map view.</li>
+  <li>Rite of Senses visuals - Pulsing vertex shader world distortion and highlighting of game objects through stenciling.</li>
+  <li>General optimization &amp; bug fixing to meet the target 60fps requirement on multiple platforms.</li>
+</ul>
+
+<iframe src="https://store.steampowered.com/widget/1153640" frameborder="0" width="100%" height="190"></iframe>
+
+<h2 id="media">Media</h2>
+
+<iframe class="steam" src="https://www.youtube.com/embed/pNqj5FQcL8E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>]]></content><author><name>Alessa Baker</name></author><category term="Portfolio" /><summary type="html"><![CDATA[Responsibilities]]></summary></entry><entry><title type="html">Quixel (2015-2017)</title><link href="http://localhost:4000/portfolio/Quixel/" rel="alternate" type="text/html" title="Quixel (2015-2017)" /><published>2022-07-02T00:00:00+02:00</published><updated>2022-07-02T00:00:00+02:00</updated><id>http://localhost:4000/portfolio/Quixel</id><content type="html" xml:base="http://localhost:4000/portfolio/Quixel/"><![CDATA[<p>I began working with Quixel very early in my career, Teddy allowed me early testing of nDO and dDO back in the day when I was an Environment Artist. As Quixel grew over the years I joined them to assist and as my skillsets grew in Technical Art - I began to contibute to other projects and help Quixel meet the demands of their ever-growing community.</p>
+
+<p>Quixel is an amazing and dedicated team, and without their patience and tuition I would not be where I am today.</p>
+
+<p>After I left, Quixel joined Epic Games in 2019, and I am super proud of everyone I worked with there. <br />
+Ya’ll rock ❤️</p>
+
+<h2 id="responsibilities">Responsibilities</h2>
+
+<ul>
+  <li>Quixel Colors an ID Generation tool built in Python for 3Ds Max, Maya and Blender. ID maps were used by Quixel SUITE for targeting parts of a mesh with different materials.</li>
+  <li>Community Staff - Assisting on Polycount, Facebook and other areas on assisting the community with issues or questions they had about Quixel Megascans or Quixel SUITE</li>
+  <li>Quixel.se - I worked on and developed the website for Quixel SUITE 2. I also developed the backend which allowed for a full tutorial section.</li>
+  <li>UE4 Megascans Pipeline - I built tools in Python to handle converted Megascans data to be auto-imported, named and setup in defined materials (Pre-Quixel UE4 plugin era)</li>
+  <li>Homebound - I worked with Wiktor Öhman on optimizing Homebound, Quixel’s VR Experience (2017) to run comfortably on Vive headsets. I also worked on some visual effects.</li>
+  <li>I made some tutorials on using Quixel SUITE and Unreal Engine to create master materials setup in the workflow similar to Unreal Tournament 4’s setup.
+and was featured on UnrealTournament.comimage.png</li>
+  <li>Attending game jams in Ireland to show Quixel SUITE and give workshops on using it.</li>
+</ul>
+
+<h2 id="media">Media</h2>
+
+<p><img src="/assets/images/quixelcolors.png" alt="Quixel Colors" class="img-responsive" /></p>
+
+<iframe src="https://www.youtube.com/embed/99Pu2Z-yFZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe src="https://www.youtube.com/embed/am3bUZcHVzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>]]></content><author><name>Alessa Baker</name></author><category term="Portfolio" /><summary type="html"><![CDATA[I began working with Quixel very early in my career, Teddy allowed me early testing of nDO and dDO back in the day when I was an Environment Artist. As Quixel grew over the years I joined them to assist and as my skillsets grew in Technical Art - I began to contibute to other projects and help Quixel meet the demands of their ever-growing community.]]></summary></entry><entry><title type="html">Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling)</title><link href="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part-2/" rel="alternate" type="text/html" title="Notifications in Unreal Engine (Part 2 — Hyperlinks and Styling)" /><published>2021-08-10T00:00:00+02:00</published><updated>2021-08-10T00:00:00+02:00</updated><id>http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part-2</id><content type="html" xml:base="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part-2/"><![CDATA[<p>In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.</p>
+
+<p>If you haven’t followed the first tutorial, please give it a look, it has a lot of what we’ve already set up as foundation for this second tutorial and we will be continuing from that point.</p>
+
+<p>Let’s continue then! Here is the notification we will be creating.</p>
+
+<p><img src="/assets/images/notifications_cantdoathing.png" alt="What we will be creating" /></p>
+
+<p>Before we get started — because we will be dealing with Editor Styling, we need to add this module to our Build.cs file of our plugin so we can access it.</p>
+
+<p>YourPlugin.Build.cs is found in your main plugin directory, and is a file responsible for informing the Unreal Build Tool which modules your plugin depends on and will statically link with.</p>
+
+<p>Go ahead and add line 13.</p>
+
+<script src="https://gist.github.com/Sythenz/ea092dce7629f0dfc4aea7019a2d217c.js"></script>
+
+<h3 id="notification--slate-styling">Notification / Slate Styling</h3>
+<p>Here is the code we will be adding to our <em>SNoficiationButtonWidget</em>, as before let’s go ahead and add this and then we can break it down and talk a little bit more about what’s going on.</p>
+
+<p>.h — added under public:</p>
+
+<script src="https://gist.github.com/Sythenz/8c1b724cedb80305b3a4189bb8863971.js"></script>
+
+<p>.cpp</p>
+
+<script src="https://gist.github.com/Sythenz/b67be14e76ec6d6543465edf413d1f3a.js"></script>
+
+<p>The first thing we do, which hopefully you’ve become somewhat accustomed to, is adding a button within a new SHorizontalBox slot and we declare another method in our header and cpp file (Lines 19–25 cpp). This time we call it <em>SpawnNotificationWithLink()</em>, and it is also an FReply method same as before.</p>
+
+<p>Simple stuff — let’s talk styling!</p>
+
+<p>So earlier, we added the EditorStyles module to our build.cs file, this means we can now access any of the iconography, widget brushes and fonts from Unreal Engine. We do this on line 45 in our cpp, but using the GetBrush method of the <em>FEditorStyle</em> namespace.</p>
+
+<p>A quick note here, an alternative you can use is FCoreStyle, but I believe this isn’t the recommended way. Most of the editor relies on the use of FEditorStyle and the EditorStyle module. Where FCoreStyle is used for runtime, FEditorStyle is the Editor Module.</p>
+
+<p>The FEditorStyle module itself just wraps and makes most of SlateCore easily accessible, but for a list of any of the brushes that are available you can check out. All you need to do is reference by string.</p>
+
+<p><em>\Engine\Source\Runtime\SlateCore\Private\Styling\CoreStyle.cpp</em></p>
+
+<p><em>Side Note:</em> Also! A super fun fact that I was surprised at when researching this. Because I come from a background in web development, did you know that Unreal Engine utilizes the amazing Font Awesome resource?</p>
+
+<p>For a full list of all icons included from Font Awesome, you can find them here: <em>Engine\Source\Editor\EditorStyle\Public\EditorFontGlyphs.h</em></p>
+
+<p><img src="/assets/images/notifications_fontawesome.png" alt="(A screenshot of the Font Awesome EditorFontGlyphs.h)" /></p>
+
+<p>For now, this is all we’ll talk about styling. You may have noticed, if this is your first plugin the default Editor Standalone Window Template in Unreal has it’s own Style.cpp when created — I’ll dedicate another article to this specifically for the sake of brevity.</p>
+
+<p>(An example of a notification using the “MessageLog.Note” icon instead) notifications_messagelognote.png</p>
+
+<h3 id="hyperlinks">Hyperlinks!</h3>
+<p>So let’s go ahead and add our next section of code to our cpp. In our same <em>SpawnNotificationWithLink()</em> method, let’s add our code for Hyperlinks and then go through it.</p>
+
+<script src="https://gist.github.com/Sythenz/b14d471b4cba417a29023bcb80fdfbe9.js"></script>
+
+<p>Hyperlinks are passed as a delegate into the <em>FNotificationInfo</em> struct via <em>.Hyperlink</em>, these can be a call to another method, but for the sake of simplicity here, we use a lambda.</p>
+
+<p>A lambda, is simply put a small function that is called in-line where it is defined. It can take in parameters, but if this is a new concept for you just know that the contents of this function gets called when our Hyperlink is pressed. For more information on Lambda functions:</p>
+
+<p><a href="https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp?view=msvc-160">Microsoft Lambda Expressions Reference</a></p>
+
+<p>In this lambda all we do is create a string to a URL and we use FPlatformProcess, a super useful module for handling generalized OS actions.
+It abstracts to FPlatformProcess to handle Android, IOS, Windows, Mac, HoloLens etc…</p>
+
+<p>It’s got a really nice function that opens a browser window with the specified URL, cool right? :3</p>
+
+<p>Last thing we do is define the text that we want to display in editor. This is done by passing a localized string into the struct via HyperlinkText, nothing crazy!</p>
+
+<p><img src="/assets/images/notification_createdlinks.png" alt="(What we’ve created! ❤)" /></p>
+
+<p>And that’s it! We’ve now created a cool notification that links to Unreal Engine documentation in just a couple lines of code with some cool styling.</p>]]></content><author><name>Alessa Baker</name></author><category term="Unreal" /><category term="Unreal Engine" /><category term="C++" /><category term="Written" /><category term="Plugin Development" /><summary type="html"><![CDATA[In this part, we’re going to cover Hyperlinks which go a little more in depth to methods we can pass into our FNotificationInfo. We will also cover some cool styling things we can do with icons on our notification and briefly touch on Styling slate if you would like to add your own custom icons.]]></summary></entry><entry><title type="html">Notifications in Unreal Engine (Part 1 — Starting Point)</title><link href="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part1/" rel="alternate" type="text/html" title="Notifications in Unreal Engine (Part 1 — Starting Point)" /><published>2021-08-07T00:00:00+02:00</published><updated>2021-08-07T00:00:00+02:00</updated><id>http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part1</id><content type="html" xml:base="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part1/"><![CDATA[<p>In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.</p>
+
+<p>Here’s an example of what we’re going to be writing over the course of three parts, the top notification style is what we will be creating today, while the second will cover Hyperlinks and the third will require a bit more work to add buttons (restart/cancel).</p>
+
+<p><img src="/assets/images/notifications_all.png" alt="Notifications Examples" /></p>
+
+<p>If you’re here just for the code, know how it works but are forgetful like I am, a link to the Github repository that has all code for all three parts of this tutorial series is at the bottom of the Article.</p>
+
+<p>I’ve divided up the code with comments for Part two and three, anything below each of these comments is for future parts.</p>
+
+<h3 id="plugin-and-widget-setup">Plugin and Widget Setup</h3>
+<p>Before we get started, I will assume a starting point of creating simple Unreal Engine plugin from the “Editor Standalone Window” template from the Plugin Browser and then following this guide on creating a Compound Widget. In this case, we will name the widget SNotificationsButtonsWidget as a class name.</p>
+
+<p>With the only difference is we will have no Slate Argument, No Widget Name property and an empty Child Slot.</p>
+
+<p>#anatomy link</p>
+
+<p>So! Before we can actually start with notifications, we need to spawn our newly created widget within our main module window.</p>
+
+<p>In the default template for Editor Standalone Window, our main Module’s cpp you’ll find an OnSpawnPluginTab() method. Most of what is here can be removed, the WidgetText at the top, and instead we replace the SNew(STextBlock) with our new widget!</p>
+
+<script src="https://gist.github.com/Sythenz/114a9cfa44ade336f3a301ccae57ec99.js"></script>
+
+<h3 id="lets-start">Let’s start!</h3>
+<p>So, let’s talk about notifications shall we? :3</p>
+
+<p>Notifications in Unreal Engine are really simply handled. In Unreal Engine, there is a module that greatly simplifies the process of generating them — It’s called the FSlateNotificationManager.</p>
+
+<p>It takes in a simple struct called FNotificationInfo which defines properties, like how long, what size and the message information that gets displayed. It can also be used for buttons and links — the second example in Part 2, will cover adding a link to the notifications too.</p>
+
+<p>I’ll start by giving you the code for setting up the notification, and then I will go through and explain what’s going on!</p>
+
+<p>Here’s our header file:</p>
+
+<script src="https://gist.github.com/Sythenz/ba29c749929b3d9027f349ebc67ceb80.js"></script>
+
+<p>And here’s our CPP:</p>
+
+<script src="https://gist.github.com/Sythenz/d21b29d1c566c28d754c748b73f28799.js"></script>
+
+<p>The first thing we do is preparing our button —
+In our Construct’s child slot we just create a new button, with some text and place it in a Horizontal box. This just generates a new button and layout in our widget so we have something to trigger our notifcations with.</p>
+
+<p>Last thing that is important is we define an FReply method. This is where our functionality for when our button is pressed, and is the delegate in OnClicked().</p>
+
+<p><img src="/assets/images/notification_spawn.png" alt="Our new button, within our widget and displayed in the plugin window." /></p>
+
+<h3 id="fnotificationinfo">FNotificationInfo</h3>
+<p>This is where most of our cool stuff happens! As I’ve said before, FNotificationInfo is a super nice struct that defines all of the behavior and text that appears within our notifications. We instantiate a new instance of a NotificationInfo struct, passing in a localized text string with our message.</p>
+
+<p>There are a bunch of parameters you can use intellisense to check out, but here’s some of the basic ones.</p>
+
+<script src="https://gist.github.com/Sythenz/db059cfc7e43ea29c0bf14af40463e42.js"></script>
+
+<p>Not all of these struct properties are just settings however, some we will see later like Hyperlink actually take in delegates. We’ll go over that soon.</p>
+
+<p>The only thing left is the actual <em>FSlateNotificationManager</em> itself.</p>
+
+<h3 id="fslatenotificationmanager">FSlateNotificationManager</h3>
+<p>By most comparisons, FSlateNotificationManager is actually a relatively simple class within Unreal Engine. It’s main purpose is to just display information passed in by the struct and make a nice little thingy at the corner of your editor.</p>
+
+<p>Checking out <em>NotificationManager.h</em>, you’ll find that it’s already well documented on it’s functionality in the comments, if you’re curious.</p>
+
+<p>Here’s where you can find it:
+<em>Engine\Source\Runtime\Slate\Public\Framework\Notifications\NotificationManager.h</em></p>
+
+<p>In our case, we are getting a reference to the manager, and calling AddNotification() which simply generates a widget and what it calls a Notification Area for displaying a stack of notifications. It does some magic, but one thing to note — Notifications are done on the Game Thread, just something to be more aware of for those of you curious.</p>
+
+<p>But to simplify:
+Line 34 of our CPP: We call <em>AddNotification</em> on our Notification Manager and it displays our cool new notification.</p>
+
+<p>Go ahead and compile, and let’s check it out. And yes, it’s highly spammable and fun to click — If you end up making a cookie clicker in Unreal Engine, let me know! XD</p>
+
+<p><img src="/assets/images/notification_spam.png" alt="(This is your conscience, do it. Make the Cookie Clicker.)" /></p>
+
+<p>And for now, that’s it for part one. We will build on-top of this existing mini-plugin in part two and three, part two will cover Hyperlinks and changing iconography of our little notifications!</p>]]></content><author><name>Alessa Baker</name></author><category term="Unreal" /><category term="Unreal Engine" /><category term="C++" /><category term="Written" /><category term="Plugin Development" /><summary type="html"><![CDATA[In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.]]></summary></entry><entry><title type="html">The Lunar Effect (Selene)</title><link href="http://localhost:4000/portfolio/Selene-The-Lunar-Effect/" rel="alternate" type="text/html" title="The Lunar Effect (Selene)" /><published>2021-07-03T00:00:00+02:00</published><updated>2021-07-03T00:00:00+02:00</updated><id>http://localhost:4000/portfolio/Selene-The-Lunar-Effect</id><content type="html" xml:base="http://localhost:4000/portfolio/Selene-The-Lunar-Effect/"><![CDATA[<p>Selene is a lighting rendering pass built with the purpose of adding Vertex Lighting functionality back to Unreal Engine. <br /></p>
+
+<p>I met The Lunar Effect team member Louie Woodhouse in April of 2020, in the Haunted PS1 community and began working with them on creating Selene and other Shaders, and technical approaches to rendering Playstation 1 Style graphics in Unreal.</p>
+
+<p>There is currently no plan to release Selene, as currently there is a lot of bugs and workarounds to fix. <br />
+However you can contact me via email about integrating it into your project.</p>
+
+<p>The Lunar Effect is currently heavily in development by Negative Entities, follow their twitter for more!</p>
+
+<p><a href="https://twitter.com/negativeentity?lang=en" target="_blank">Negative Entities On Twitter</a></p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Selene supports full Vertex Lighting with an infinite number of lights and does not rely on Custom Primitive Data, Material Parameter Collections or other methods of achieving vertex lighting.</li>
+  <li>Support for Point Lights, Spot lights and Skylights.</li>
+  <li>Lights are performant and ran in screen space as a post process pass on the world.</li>
+</ul>
+
+<iframe src="https://store.steampowered.com/widget/1556850" frameborder="0" width="100%" height="190"></iframe>
+
+<h2 id="media">Media</h2>
+
+<iframe src="https://www.youtube.com/embed/iTz2lqygUM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h4 id="early-selene-demo">Early Selene Demo</h4>
+
+<iframe src="https://www.youtube.com/embed/VBTwbd2hzaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>]]></content><author><name>Alessa Baker</name></author><category term="Portfolio" /><summary type="html"><![CDATA[Selene is a lighting rendering pass built with the purpose of adding Vertex Lighting functionality back to Unreal Engine.]]></summary></entry><entry><title type="html">Desert Bus VR (2017)</title><link href="http://localhost:4000/portfolio/Desert-Bus-VR/" rel="alternate" type="text/html" title="Desert Bus VR (2017)" /><published>2021-07-01T00:00:00+02:00</published><updated>2021-07-01T00:00:00+02:00</updated><id>http://localhost:4000/portfolio/Desert-Bus-VR</id><content type="html" xml:base="http://localhost:4000/portfolio/Desert-Bus-VR/"><![CDATA[<p>I only joined this team for two short weeks but the team were amazing and I had a lot of fun working on such a silly and amazing project.
+I grew up watching Pen &amp; Teller, so to work on a title created by them in the late 1990’s was an absolute dream.</p>
+
+<p>Please also check out and support the charity that runs the original game every year for hours on end. <br /> 
+They’re so damn cool!</p>
+
+<p><a href="https://desertbus.org/" target="_blank">Desert Bus For Hope</a></p>
+
+<h2 id="responsibilities">Responsibilities</h2>
+
+<ul>
+  <li>Optimization of the Glass Shader on the bus to run in VR</li>
+  <li>Added and customized Physics Objects to prevent clipping within the bus</li>
+  <li>Circular Reveal of the logo and bus into the game-world (using stencil buffers)</li>
+</ul>
+
+<iframe class="steam" src="https://store.steampowered.com/widget/638110" frameborder="0" width="100%" height="190"></iframe>
+
+<h2 id="media">Media</h2>
+
+<iframe src="https://www.youtube.com/embed/qdn1_aAVtwE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>]]></content><author><name>Alessa Baker</name></author><category term="Portfolio" /><summary type="html"><![CDATA[I only joined this team for two short weeks but the team were amazing and I had a lot of fun working on such a silly and amazing project. I grew up watching Pen &amp; Teller, so to work on a title created by them in the late 1990’s was an absolute dream.]]></summary></entry><entry><title type="html">Anatomy of a Widget</title><link href="http://localhost:4000/unreal/Anatomy-Of-A-Widget/" rel="alternate" type="text/html" title="Anatomy of a Widget" /><published>2021-05-21T00:00:00+02:00</published><updated>2021-05-21T00:00:00+02:00</updated><id>http://localhost:4000/unreal/Anatomy-Of-A-Widget</id><content type="html" xml:base="http://localhost:4000/unreal/Anatomy-Of-A-Widget/"><![CDATA[<p>So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.</p>
+
+<p>To start with this tutorial, let’s create a C++ class deriving from UObject as SCompoundWidget, the class we really want to inherit from doesn’t appear in the Choose Parent Class list in editor.</p>
+
+<h2 id="compound-widgets">Compound Widgets</h2>
+
+<p><img src="/assets/images/parentclass.png" alt="Creating a Parent Class" /></p>
+
+<p>Next! Let’s use the template below, this is a standard template for any widget for Slate.</p>
+
+<p>Obviously, you should name the class whatever you’d like, here I’m just using an arbitrary name of SNotificationButtons as it will be used in another tutorial.</p>
+
+<p>The UObject class we’ve created will create a standard class inheriting from UObject - we’re just overriding that with the template below.</p>
+
+<script src="https://gist.github.com/Sythenz/6f3dcf97583503d1d5acdd0b361e6624.js"></script>
+
+<p><strong>SCompoundWidget:</strong> This widget type is pretty much a raw, internal widget that isn’t exposed to UMG and has a construct method which includes a ChildSlot member. ChildSlot becomes out main area to write our slate code for this widget.</p>
+
+<p><strong>SLATE_BEGIN_ARGS():</strong> This is a macro that creates a struct of variables and exposes them to InArgs in our construct function. On line 17, you can define defaults for each argument setup by prefixing the argument name with _</p>
+
+<p><strong>SLATE_ARGUMENT():</strong> Is a macro to declare a slate argument/parameter, Arguments can only be values however you can also use SLATE_ATTRIBUTE() and pass in a function instead if you so choose.</p>
+
+<p><strong>SLATE_END_ARGS()</strong> is quite literally a closing brace }. It just closes of the struct created by SLATE_BEGIN_ARGS().</p>
+
+<p>Let’s now setup our .cpp file and take a look at the construct method for SCompoundWidgets.</p>
+
+<script src="https://gist.github.com/Sythenz/35a5966261345f9cae5be31b56499e56.js"></script>
+
+<p>The first thing we’ll do is setup a standard Localization text namespace, just for some string wrangling later on.</p>
+
+<p>Then we have our two Macros:
+<strong>BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong> and <strong>END_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong></p>
+
+<p>these super long macros basically handle whether or not pragma is optimized depending on the platform and the build type. Honestly, they are magic, just wrap them around your Construct function ❤ :P</p>
+
+<p>Our first line in our construct method, line 13 is taking the argument set by SLATE_ARGUMENT back in our header file, and assigning it to the WidgetName method.</p>
+
+<p>In order to use this after, simply use WidgetName.Get(), as the TAttribute class has a getter that we should pull from.</p>
+
+<h2 id="child-slot">Child Slot</h2>
+
+<p>The child slot of a SCompoundWidget is where the magic happens. I recommend looking at or searching for “ChildSlot” across UE4’s code base to get an idea of how slate code is structured. But essentially, <strong>SNew()</strong> and <strong>SAssignNew()</strong> are the two main widget creation methods and all things considered Slate is a little like JSON in syntax.</p>
+
+<p><strong>SNew()</strong> can be considered ‘create and forget’ as in, you spawn a widget without planning to access it later.</p>
+
+<p><strong>SAssignNew()</strong> will create a widget of class, and can then be saved for later in a member. The example below creates an SBorder widget and saves it as a shared pointer in the header.</p>
+
+<script src="https://gist.github.com/Sythenz/d04be255ea7b7bb29f5db21e1958295e.js"></script>
+
+<p>This isn’t going to be a slate tutorial, however I plan on creating one on syntax and going a little more in depth — but then, all tutorials I’m doing will have some manner of Slate used and you can pick up more from future tutorials.</p>
+
+<p>Lastly, let’s talk creation! So in another area say we spawn our widget using the SNew() Method, any of the arguments we specify in the header are now accessible as any of the .parameters written underneath like so:</p>
+
+<script src="https://gist.github.com/Sythenz/f7f72e0f63851812edd3f662a53db0cd.js"></script>
+
+<p>One other note on slate. It’s picky, I mean… Really, really picky about formatting. VS will indent when you don’t want it to, and good luck pasting slate code. What I end up doing is pasting my slate, and then doing one Ctrl+Z to remove the ‘fixed’ indentation that VS applies.</p>
+
+<p>If someone has some sort of VS extension that correctly handles Slate specific formatting please DM me on Twitter or Discord!</p>
+
+<p>So that’s it! This is the basics of an SCompoundWidget, I will be referring back to this whenever I’m creating a widget in another tutorial and should prove to be a helpful resource if you need a quick template yourself.</p>]]></content><author><name>Alessa Baker</name></author><category term="Unreal" /><category term="Unreal Engine" /><category term="Written" /><category term="C++" /><category term="Plugin Development" /><summary type="html"><![CDATA[So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.]]></summary></entry><entry><title type="html">Custom Details Panels in Unreal Engine (FPropertyEditorModule)</title><link href="http://localhost:4000/unreal/Custom-Details-Panels/" rel="alternate" type="text/html" title="Custom Details Panels in Unreal Engine (FPropertyEditorModule)" /><published>2021-05-13T00:00:00+02:00</published><updated>2021-05-13T00:00:00+02:00</updated><id>http://localhost:4000/unreal/Custom-Details-Panels</id><content type="html" xml:base="http://localhost:4000/unreal/Custom-Details-Panels/"><![CDATA[<p>In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.</p>
+
+<p>For this project, we are going to use UE4.24 but you can use any version you’d like. Let’s go ahead and create a new plugin, and we will use the “Editor Standalone Window” plugin template.</p>
+
+<p>Once you have reloaded the Visual Studio Project, open the editor again and create a new default UObject class under the plugin module. I’ve called this class UCustomSettings, but you can name it whatever you’d like.</p>
+
+<p><img src="/assets/images/customdetails_structure.png" alt="Our Visual Studio plugin structure" /></p>
+
+<h2 id="specifying-our-custom-details">Specifying our custom Details</h2>
+
+<p>Creating our Custom Details panel is simple! Let’s go to our CustomSettings.h file and write up some properties to display.</p>
+
+<script src="https://gist.github.com/Sythenz/2263bc3e6126e8c7310283a38189d13c.js"></script>
+
+<p>For our Custom Details panel, all specifiers in a UPROPERTY() macro will be evaluated, so you can organize and split into categories, or use things like AdvancedDisplay to hide certain properties. For a list of full UPROPERTY() macro settings:</p>
+
+<p><a href="https://docs.unrealengine.com/4.26/en-US/ProgrammingAndScripting/GameplayArchitecture/Properties/Specifiers/">UProperty Specifiers</a></p>
+
+<h2 id="creating-our-details-widget">Creating our Details Widget</h2>
+<p>Next, let’s work on creating our Details View widget. The Details View widget is created and set by the FPropertyEditorModule and will handle the display and creation of our Custom Details Panel.</p>
+
+<p>In our main Plugin Module class we will create two pointers to our CustomSettings class and one to store our created Details View widget.</p>
+
+<script src="https://gist.github.com/Sythenz/e84df14a567b8b1afb4875c9fe672518.js"></script>
+
+<p>I’ve added them under the OnSpawnPluginTab function created with our template, as we will do our instantiation in that class.</p>
+
+<p>Here is the important part! Let’s add this in, and then I’ll go through what is happening.</p>
+
+<script src="https://gist.github.com/Sythenz/3caa2cadb9f4bf6909ec65f7785f63c1.js"></script>
+
+<p>First we create our Object whenever the tab is spawned — you can place this elsewhere to prevent our settings from refreshing everytime the tab is created, but for now. We’ll just create it here.</p>
+
+<p>We then load our Property Editor Module! The module itself can be used for more than just creating Custom Details Panels.</p>
+
+<p><a href="https://docs.unrealengine.com/4.26/en-US/API/Editor/PropertyEditor/FPropertyEditorModule/">FPropertyEditorModule</a></p>
+
+<p>Next up is FDetailsViewArgs, this is how we control how our Details Panel is displayed, things like hiding the search box at the top. One argument we’ll pass in here is a tip that appears by default at the top requesting the user select an object. We don’t need this, so we hide it.</p>
+
+<p>We then create our PropertyWidget, this creates the slate widget itself and informs the editor that the widget has been instantiated.</p>
+
+<p>The most important part is line 17, here we tell the DetailsView widget to actually use the UObject class we’ve created and to pull the properties from there.</p>
+
+<p>Then we just add it to our slate on Line 23!</p>
+
+<h2 id="our-details-panel">Our Details Panel</h2>
+<p>Once everything is done — you will see your new Custom Details panel in the Custom Editor Window!</p>
+
+<p><img src="/assets/images/customdetailsexample.png" alt="Our Custom Details complete!" /></p>
+
+<p>For the full example, please check out the Github repository here!</p>]]></content><author><name>Alessa Baker</name></author><category term="Unreal" /><category term="Unreal Engine" /><category term="C++" /><category term="Plugin Development" /><category term="Written" /><summary type="html"><![CDATA[In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.]]></summary></entry><entry><title type="html">Case Study: Organizing Your Materials in Unreal Engine 4!</title><link href="http://localhost:4000/unreal/Organizing-Your-Materials/" rel="alternate" type="text/html" title="Case Study: Organizing Your Materials in Unreal Engine 4!" /><published>2021-03-03T00:00:00+01:00</published><updated>2021-03-03T00:00:00+01:00</updated><id>http://localhost:4000/unreal/Organizing-Your-Materials</id><content type="html" xml:base="http://localhost:4000/unreal/Organizing-Your-Materials/"><![CDATA[<p>In this tutorial, we will go through the prototype version of our Stylized Gradient material and take a Tech Artist approach to organizing and keeping our material graph clean so that understanding our Material Graph becomes easier for those who work with it in the future!</p>]]></content><author><name>Alessa Baker</name></author><category term="Unreal" /><category term="Unreal Engine" /><category term="Video" /><summary type="html"><![CDATA[In this tutorial, we will go through the prototype version of our Stylized Gradient material and take a Tech Artist approach to organizing and keeping our material graph clean so that understanding our Material Graph becomes easier for those who work with it in the future!]]></summary></entry><entry><title type="html">Writing HLSL Code OUTSIDE The Custom Node in UE4</title><link href="http://localhost:4000/unreal/Custom-Node-In-UE4/" rel="alternate" type="text/html" title="Writing HLSL Code OUTSIDE The Custom Node in UE4" /><published>2021-02-25T00:00:00+01:00</published><updated>2021-02-25T00:00:00+01:00</updated><id>http://localhost:4000/unreal/Custom-Node-In-UE4</id><content type="html" xml:base="http://localhost:4000/unreal/Custom-Node-In-UE4/"><![CDATA[<p>Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3</p>]]></content><author><name>Alessa Baker</name></author><category term="Unreal" /><category term="Unreal Engine" /><category term="Video" /><summary type="html"><![CDATA[Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3]]></summary></entry></feed>
