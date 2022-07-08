@@ -1,0 +1,487 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Anatomy of a Widget -</title>
+<meta name="description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
+
+
+  <meta name="author" content="Alessa Baker">
+  
+  <meta property="article:author" content="Alessa Baker">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Anatomy of a Widget">
+<meta property="og:url" content="http://localhost:4000/unreal/Anatomy-Of-A-Widget/">
+
+
+  <meta property="og:description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/teaser_anatomy.png">
+
+
+
+  <meta name="twitter:site" content="@Codekittah">
+  <meta name="twitter:title" content="Anatomy of a Widget">
+  <meta name="twitter:description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
+  <meta name="twitter:url" content="http://localhost:4000/unreal/Anatomy-Of-A-Widget/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/teaser_anatomy.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-05-21T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/unreal/Anatomy-Of-A-Widget/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alessa Baker",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NDZGBDK');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RNTG6Q1H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J3RNTG6Q1H');
+</script>
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDZGBDK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div id="masthead" class="masthead">
+  <div class="topbar"></div>
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.svg" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tutorials/">Tutorials</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Creators/">Creators</a>
+            </li><li class="masthead__menu-item patreon--cta">  
+              <a href="http://patreon.com/codekitten" target="_blank"><i class="fab fa-patreon"></i> Join Patreon</a>
+            </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/teaser_anatomy.png" alt="Anatomy of a Widget" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.jpg" alt="Alessa Baker" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Alessa Baker</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Shader Witch, Technical Artist and cutesie goth who loves kittens. ❤️</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:alessa@codekitten.me" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/Codekittah" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Sythenz" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+  <article  class="page h-entry"  itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Anatomy of a Widget">
+    <meta itemprop="description" content="So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.">
+    <meta itemprop="datePublished" content="2021-05-21T00:00:00+02:00">
+    
+
+    <div class="page__inner-wrap">
+
+      
+      
+
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>So! For the sake of future tutorials I plan to write here, I thought it be best to do a quick write up on creating a widget for Slate in C++ with Unreal Engine. I will link back to this then from other tutorials for the sake of time.</p>
+
+<p>To start with this tutorial, let’s create a C++ class deriving from UObject as SCompoundWidget, the class we really want to inherit from doesn’t appear in the Choose Parent Class list in editor.</p>
+
+<h2 id="compound-widgets">Compound Widgets</h2>
+
+<p><img src="/assets/images/parentclass.png" alt="Creating a Parent Class" /></p>
+
+<p>Next! Let’s use the template below, this is a standard template for any widget for Slate.</p>
+
+<p>Obviously, you should name the class whatever you’d like, here I’m just using an arbitrary name of SNotificationButtons as it will be used in another tutorial.</p>
+
+<p>The UObject class we’ve created will create a standard class inheriting from UObject - we’re just overriding that with the template below.</p>
+
+<script src="https://gist.github.com/Sythenz/6f3dcf97583503d1d5acdd0b361e6624.js"></script>
+
+<p><strong>SCompoundWidget:</strong> This widget type is pretty much a raw, internal widget that isn’t exposed to UMG and has a construct method which includes a ChildSlot member. ChildSlot becomes out main area to write our slate code for this widget.</p>
+
+<p><strong>SLATE_BEGIN_ARGS():</strong> This is a macro that creates a struct of variables and exposes them to InArgs in our construct function. On line 17, you can define defaults for each argument setup by prefixing the argument name with _</p>
+
+<p><strong>SLATE_ARGUMENT():</strong> Is a macro to declare a slate argument/parameter, Arguments can only be values however you can also use SLATE_ATTRIBUTE() and pass in a function instead if you so choose.</p>
+
+<p><strong>SLATE_END_ARGS()</strong> is quite literally a closing brace }. It just closes of the struct created by SLATE_BEGIN_ARGS().</p>
+
+<p>Let’s now setup our .cpp file and take a look at the construct method for SCompoundWidgets.</p>
+
+<script src="https://gist.github.com/Sythenz/35a5966261345f9cae5be31b56499e56.js"></script>
+
+<p>The first thing we’ll do is setup a standard Localization text namespace, just for some string wrangling later on.</p>
+
+<p>Then we have our two Macros:
+<strong>BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong> and <strong>END_SLATE_FUNCTION_BUILD_OPTIMIZATION()</strong></p>
+
+<p>these super long macros basically handle whether or not pragma is optimized depending on the platform and the build type. Honestly, they are magic, just wrap them around your Construct function ❤ :P</p>
+
+<p>Our first line in our construct method, line 13 is taking the argument set by SLATE_ARGUMENT back in our header file, and assigning it to the WidgetName method.</p>
+
+<p>In order to use this after, simply use WidgetName.Get(), as the TAttribute class has a getter that we should pull from.</p>
+
+<h2 id="child-slot">Child Slot</h2>
+
+<p>The child slot of a SCompoundWidget is where the magic happens. I recommend looking at or searching for “ChildSlot” across UE4’s code base to get an idea of how slate code is structured. But essentially, <strong>SNew()</strong> and <strong>SAssignNew()</strong> are the two main widget creation methods and all things considered Slate is a little like JSON in syntax.</p>
+
+<p><strong>SNew()</strong> can be considered ‘create and forget’ as in, you spawn a widget without planning to access it later.</p>
+
+<p><strong>SAssignNew()</strong> will create a widget of class, and can then be saved for later in a member. The example below creates an SBorder widget and saves it as a shared pointer in the header.</p>
+
+<script src="https://gist.github.com/Sythenz/d04be255ea7b7bb29f5db21e1958295e.js"></script>
+
+<p>This isn’t going to be a slate tutorial, however I plan on creating one on syntax and going a little more in depth — but then, all tutorials I’m doing will have some manner of Slate used and you can pick up more from future tutorials.</p>
+
+<p>Lastly, let’s talk creation! So in another area say we spawn our widget using the SNew() Method, any of the arguments we specify in the header are now accessible as any of the .parameters written underneath like so:</p>
+
+<script src="https://gist.github.com/Sythenz/f7f72e0f63851812edd3f662a53db0cd.js"></script>
+
+<p>One other note on slate. It’s picky, I mean… Really, really picky about formatting. VS will indent when you don’t want it to, and good luck pasting slate code. What I end up doing is pasting my slate, and then doing one Ctrl+Z to remove the ‘fixed’ indentation that VS applies.</p>
+
+<p>If someone has some sort of VS extension that correctly handles Slate specific formatting please DM me on Twitter or Discord!</p>
+
+<p>So that’s it! This is the basics of an SCompoundWidget, I will be referring back to this whenever I’m creating a widget in another tutorial and should prove to be a helpful resource if you need a quick template yourself.</p>
+
+        
+      </section>
+      
+      
+
+<footer class="page__meta patreon">
+    <div class="patreon__left">
+        <h2>Find this tutorial useful?</h2>
+        <p>If you found my tutorials useful, consider becoming a Patron to support more!</p>
+    </div>
+    <div class="patreon__right">
+        <a href="http://patreon.com/codekitten" target="_blank"><button class="patreon__right__button"><i class="fab fa-patreon"></i>Join</button></a>
+    </div> 
+</footer>
+
+      
+<div class = "Alessa">
+    Alessa ❤️
+</div>
+
+
+    </div>
+
+    
+  </article>
+
+  
+
+
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/codekittah" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Alessa Baker. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
