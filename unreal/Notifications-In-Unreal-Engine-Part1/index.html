@@ -1,0 +1,597 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Notifications in Unreal Engine (Part 1 — Starting Point) -</title>
+<meta name="description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
+
+
+  <meta name="author" content="Alessa Baker">
+  
+  <meta property="article:author" content="Alessa Baker">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="">
+<meta property="og:title" content="Notifications in Unreal Engine (Part 1 — Starting Point)">
+<meta property="og:url" content="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part1/">
+
+
+  <meta property="og:description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/teaser_notifications_part1.png">
+
+
+
+  <meta name="twitter:site" content="@Codekittah">
+  <meta name="twitter:title" content="Notifications in Unreal Engine (Part 1 — Starting Point)">
+  <meta name="twitter:description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
+  <meta name="twitter:url" content="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part1/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/teaser_notifications_part1.png">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-08-07T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/unreal/Notifications-In-Unreal-Engine-Part1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alessa Baker",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NDZGBDK');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDZGBDK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div id="masthead" class="masthead">
+  <div class="topbar"></div>
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.svg" alt=""></a>
+        
+        <a class="site-title" href="/">
+          
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/portfolio/">Portfolio</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tutorials/">Tutorials</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Creators/">Creators</a>
+            </li><li class="masthead__menu-item patreon--cta">  
+              <a href="http://patreon.com/codekitten" target="_blank"><i class="fab fa-patreon"></i> Join Patreon</a>
+            </li>
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/teaser_notifications_part1.png" alt="Notifications in Unreal Engine (Part 1 — Starting Point)" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.jpg" alt="Alessa Baker" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Alessa Baker</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Shader Witch, Technical Artist and cutesie goth who loves kittens. ❤️</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:alessa@codekitten.me" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://twitter.com/Codekittah" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/Sythenz" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+  <article  class="page h-entry"  itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Notifications in Unreal Engine (Part 1 — Starting Point)">
+    <meta itemprop="description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
+    <meta itemprop="datePublished" content="2021-08-07T00:00:00+02:00">
+    
+
+    <div class="page__inner-wrap">
+
+      
+      
+
+<div class="github">
+    <h4 id="github-repository">
+        Get Code from this Tutorial
+    </h4>
+    <a href = "https://github.com/Sythenz/UnrealNotificationsExample" target="_blank"><button class="github-button"><i class="fab fa-github"></i> Go to Repo</button></a>
+</div>
+
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.</p>
+
+<p>Here’s an example of what we’re going to be writing over the course of three parts, the top notification style is what we will be creating today, while the second will cover Hyperlinks and the third will require a bit more work to add buttons (restart/cancel).</p>
+
+<p><img src="/assets/images/notifications_all.png" alt="Notifications Examples" /></p>
+
+<p>If you’re here just for the code, know how it works but are forgetful like I am, a link to the Github repository that has all code for all three parts of this tutorial series is at the bottom of the Article.</p>
+
+<p>I’ve divided up the code with comments for Part two and three, anything below each of these comments is for future parts.</p>
+
+<h3 id="plugin-and-widget-setup">Plugin and Widget Setup</h3>
+<p>Before we get started, I will assume a starting point of creating simple Unreal Engine plugin from the “Editor Standalone Window” template from the Plugin Browser and then following this guide on creating a Compound Widget. In this case, we will name the widget SNotificationsButtonsWidget as a class name.</p>
+
+<p>With the only difference is we will have no Slate Argument, No Widget Name property and an empty Child Slot.</p>
+
+<p>#anatomy link</p>
+
+<p>So! Before we can actually start with notifications, we need to spawn our newly created widget within our main module window.</p>
+
+<p>In the default template for Editor Standalone Window, our main Module’s cpp you’ll find an OnSpawnPluginTab() method. Most of what is here can be removed, the WidgetText at the top, and instead we replace the SNew(STextBlock) with our new widget!</p>
+
+<script src="https://gist.github.com/Sythenz/114a9cfa44ade336f3a301ccae57ec99.js"></script>
+
+<h3 id="lets-start">Let’s start!</h3>
+<p>So, let’s talk about notifications shall we? :3</p>
+
+<p>Notifications in Unreal Engine are really simply handled. In Unreal Engine, there is a module that greatly simplifies the process of generating them — It’s called the FSlateNotificationManager.</p>
+
+<p>It takes in a simple struct called FNotificationInfo which defines properties, like how long, what size and the message information that gets displayed. It can also be used for buttons and links — the second example in Part 2, will cover adding a link to the notifications too.</p>
+
+<p>I’ll start by giving you the code for setting up the notification, and then I will go through and explain what’s going on!</p>
+
+<p>Here’s our header file:</p>
+
+<script src="https://gist.github.com/Sythenz/ba29c749929b3d9027f349ebc67ceb80.js"></script>
+
+<p>And here’s our CPP:</p>
+
+<script src="https://gist.github.com/Sythenz/d21b29d1c566c28d754c748b73f28799.js"></script>
+
+<p>The first thing we do is preparing our button —
+In our Construct’s child slot we just create a new button, with some text and place it in a Horizontal box. This just generates a new button and layout in our widget so we have something to trigger our notifcations with.</p>
+
+<p>Last thing that is important is we define an FReply method. This is where our functionality for when our button is pressed, and is the delegate in OnClicked().</p>
+
+<p><img src="/assets/images/notification_spawn.png" alt="Our new button, within our widget and displayed in the plugin window." /></p>
+
+<h3 id="fnotificationinfo">FNotificationInfo</h3>
+<p>This is where most of our cool stuff happens! As I’ve said before, FNotificationInfo is a super nice struct that defines all of the behavior and text that appears within our notifications. We instantiate a new instance of a NotificationInfo struct, passing in a localized text string with our message.</p>
+
+<p>There are a bunch of parameters you can use intellisense to check out, but here’s some of the basic ones.</p>
+
+<script src="https://gist.github.com/Sythenz/db059cfc7e43ea29c0bf14af40463e42.js"></script>
+
+<p>Not all of these struct properties are just settings however, some we will see later like Hyperlink actually take in delegates. We’ll go over that soon.</p>
+
+<p>The only thing left is the actual <em>FSlateNotificationManager</em> itself.</p>
+
+<h3 id="fslatenotificationmanager">FSlateNotificationManager</h3>
+<p>By most comparisons, FSlateNotificationManager is actually a relatively simple class within Unreal Engine. It’s main purpose is to just display information passed in by the struct and make a nice little thingy at the corner of your editor.</p>
+
+<p>Checking out <em>NotificationManager.h</em>, you’ll find that it’s already well documented on it’s functionality in the comments, if you’re curious.</p>
+
+<p>Here’s where you can find it:
+<em>Engine\Source\Runtime\Slate\Public\Framework\Notifications\NotificationManager.h</em></p>
+
+<p>In our case, we are getting a reference to the manager, and calling AddNotification() which simply generates a widget and what it calls a Notification Area for displaying a stack of notifications. It does some magic, but one thing to note — Notifications are done on the Game Thread, just something to be more aware of for those of you curious.</p>
+
+<p>But to simplify:
+Line 34 of our CPP: We call <em>AddNotification</em> on our Notification Manager and it displays our cool new notification.</p>
+
+<p>Go ahead and compile, and let’s check it out. And yes, it’s highly spammable and fun to click — If you end up making a cookie clicker in Unreal Engine, let me know! XD</p>
+
+<p><img src="/assets/images/notification_spam.png" alt="(This is your conscience, do it. Make the Cookie Clicker.)" /></p>
+
+<p>And for now, that’s it for part one. We will build on-top of this existing mini-plugin in part two and three, part two will cover Hyperlinks and changing iconography of our little notifications!</p>
+
+        
+      </section>
+      
+      
+
+<footer class="page__meta patreon">
+    <div class="patreon__left">
+        <h2>Find this tutorial useful?</h2>
+        <p>If you found my tutorials useful, consider becoming a Patron to support more!</p>
+    </div>
+    <div class="patreon__right">
+        <a href="http://patreon.com/codekitten" target="_blank"><button class="patreon__right__button"><i class="fab fa-patreon"></i>Join</button></a>
+    </div> 
+</footer>
+
+      
+<div class = "Alessa">
+    Alessa ❤️
+</div>
+
+
+    </div>
+
+    
+  </article>
+
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+        
+          
+        
+          
+            
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <a href="/unreal/Notifications-In-Unreal-Engine-Part-2/">
+
+          
+
+          <div class="archive__item-teaser">
+            <img src="/assets/images/teaser_notifications_part2.png" alt="">
+          </div>
+
+        </a>
+      
+    </article>
+  </div>
+
+
+          
+        
+          
+        
+          
+        
+          
+            
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <a href="/unreal/Anatomy-Of-A-Widget/">
+
+          
+
+          <div class="archive__item-teaser">
+            <img src="/assets/images/teaser_anatomy.png" alt="">
+          </div>
+
+        </a>
+      
+    </article>
+  </div>
+
+
+          
+        
+          
+            
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <a href="/unreal/Custom-Details-Panels/">
+
+          
+
+          <div class="archive__item-teaser">
+            <img src="/assets/images/teaser_customdetails.png" alt="">
+          </div>
+
+        </a>
+      
+    </article>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/codekittah" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Alessa Baker. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
