@@ -64,10 +64,4 @@ var store = [{
         "tags": [],
         "url": "/portfolio/Chorus/",
         "teaser": "https://chorusthegame.com/media/KeyArtv2/CHORVS_FIN_HORIZ_093020-2560.jpg"
-      },{
-        "title": "Notifications in Unreal Engine (Part 3 — Buttons and Delegates)",
-        "excerpt":"Hey again! ❤ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons. Before we get started, as always. This tutorial works from the basis created in both parts one and...","categories": ["Unreal"],
-        "tags": ["Unreal Engine","C++","Written","Plugin Development"],
-        "url": "/unreal/Notifications-in-Unreal-Engine-Part3/",
-        "teaser": "/assets/images/teaser_notifications_part3.png"
       }]
