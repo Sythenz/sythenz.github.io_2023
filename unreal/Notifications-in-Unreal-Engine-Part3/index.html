@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Notifications in Unreal Engine (Part 1 — Starting Point) - CODEKITTEN</title>
-<meta name="description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
+<!-- begin _includes/seo.html --><title>Notifications in Unreal Engine (Part 3 — Buttons and Delegates) - CODEKITTEN</title>
+<meta name="description" content="Hey again! ❤ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
 
 
   <meta name="author" content="Alessa Baker">
@@ -22,33 +22,33 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="CODEKITTEN">
-<meta property="og:title" content="Notifications in Unreal Engine (Part 1 — Starting Point)">
-<meta property="og:url" content="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part1/">
+<meta property="og:title" content="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)">
+<meta property="og:url" content="http://codekitten.me/unreal/Notifications-in-Unreal-Engine-Part3/">
 
 
-  <meta property="og:description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
+  <meta property="og:description" content="Hey again! ❤ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
 
 
 
-  <meta property="og:image" content="http://codekitten.me/assets/images/teaser_notifications_part1.png">
+  <meta property="og:image" content="http://codekitten.me/assets/images/teaser_notifications_part3.png">
 
 
 
   <meta name="twitter:site" content="@Codekittah">
-  <meta name="twitter:title" content="Notifications in Unreal Engine (Part 1 — Starting Point)">
-  <meta name="twitter:description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
-  <meta name="twitter:url" content="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part1/">
+  <meta name="twitter:title" content="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)">
+  <meta name="twitter:description" content="Hey again! ❤ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
+  <meta name="twitter:url" content="http://codekitten.me/unreal/Notifications-in-Unreal-Engine-Part3/">
 
   
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="http://codekitten.me/assets/images/teaser_notifications_part1.png">
+    <meta name="twitter:image" content="http://codekitten.me/assets/images/teaser_notifications_part3.png">
   
 
   
 
 
 
-  <meta property="article:published_time" content="2021-08-07T00:00:00+02:00">
+  <meta property="article:published_time" content="2022-07-09T00:00:00+02:00">
 
 
 
@@ -59,7 +59,7 @@
   
 
 
-<link rel="canonical" href="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part1/">
+<link rel="canonical" href="http://codekitten.me/unreal/Notifications-in-Unreal-Engine-Part3/">
 
 
 
@@ -195,7 +195,7 @@
   style=" background-image: url('');"
 >
   
-    <img src="/assets/images/teaser_notifications_part1.png" alt="Notifications in Unreal Engine (Part 1 — Starting Point)" class="page__hero-image">
+    <img src="/assets/images/teaser_notifications_part3.png" alt="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)" class="page__hero-image">
   
   
 </div>
@@ -324,14 +324,19 @@
   </div>
 
   <article  class="page h-entry"  itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Notifications in Unreal Engine (Part 1 — Starting Point)">
-    <meta itemprop="description" content="In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.">
-    <meta itemprop="datePublished" content="2021-08-07T00:00:00+02:00">
+    <meta itemprop="headline" content="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)">
+    <meta itemprop="description" content="Hey again! ❤ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
+    <meta itemprop="datePublished" content="2022-07-09T00:00:00+02:00">
     
 
     <div class="page__inner-wrap">
 
       
+<div class="codekitten__wip">
+    <h3>⚒️ Work in Progress</h3>
+    <p>This article is currently unfinished, check back soon!</p>
+</div>
+
       
 
 <div class="github">
@@ -344,82 +349,46 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <p>In this tutorial, we’re going to cover creating notifications in Unreal Engine, similar to the “Lighting Build Completed” dialog boxes, or whenever Unreal asks something in the bottom right corner.</p>
+        <p>Hey again! ❤ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.</p>
 
-<p>Here’s an example of what we’re going to be writing over the course of three parts, the top notification style is what we will be creating today, while the second will cover Hyperlinks and the third will require a bit more work to add buttons (restart/cancel).</p>
+<p>Before we get started, as always. This tutorial works from the basis created in both parts one and two. You can find those here, follow along with them and then come back here if you haven’t done so already.</p>
 
-<p><img src="/assets/images/notifications_all.png" alt="Notifications Examples" /></p>
+<p><a href="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part1/">Notifications in Unreal Engine Part 1</a>
+<a href="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part-2/">Notifications in Unreal Engine Part 2</a></p>
 
-<p>If you’re here just for the code, know how it works but are forgetful like I am, a link to the Github repository that has all code for all three parts of this tutorial series is at the bottom of the Article.</p>
+<p>This tutorial will perhaps be a little more complex than the others before, so I would say an understanding of shared/weak and pointers in general would be really useful to look into first.</p>
 
-<p>I’ve divided up the code with comments for Part two and three, anything below each of these comments is for future parts.</p>
+<p>So let’s start! As before, let’s go ahead and add to our <strong>SNotificationButtonsWidget</strong> header and cpp files and then I’ll break it down and describe what’s going on.</p>
 
-<h3 id="plugin-and-widget-setup">Plugin and Widget Setup</h3>
-<p>Before we get started, I will assume a starting point of creating simple Unreal Engine plugin from the “Editor Standalone Window” template from the Plugin Browser and then following this guide on creating a Compound Widget. In this case, we will name the widget SNotificationsButtonsWidget as a class name.</p>
+<p>.h (We add everything under Part 3, be sure to add the NotificationPtr too!)</p>
 
-<p>With the only difference is we will have no Slate Argument, No Widget Name property and an empty Child Slot.</p>
+<script src="https://gist.github.com/Sythenz/d91e6777f304baba75f77bab4f0072eb.js"></script>
 
-<p>#anatomy link</p>
+<p>.cpp</p>
 
-<p>So! Before we can actually start with notifications, we need to spawn our newly created widget within our main module window.</p>
+<script src="https://gist.github.com/Sythenz/87f514925260beac469d35ebdeb3a5b5.js"></script>
 
-<p>In the default template for Editor Standalone Window, our main Module’s cpp you’ll find an OnSpawnPluginTab() method. Most of what is here can be removed, the WidgetText at the top, and instead we replace the SNew(STextBlock) with our new widget!</p>
+<p>A note before we continue, you’ll see in the CPP file I’ve removed the first two parts methods for the sake of brevity and making this gist easier to understand. So just be careful copy pasting if you are!</p>
 
-<script src="https://gist.github.com/Sythenz/114a9cfa44ade336f3a301ccae57ec99.js"></script>
+<p>The first thing, just as before is in our Construct method, adding another <strong>SHorizontalBox</strong> slot with a button which links via the <strong>OnClicked()</strong> delegate to our FReply Method just the same as before. This should be some what intutive now.</p>
 
-<h3 id="lets-start">Let’s start!</h3>
-<p>So, let’s talk about notifications shall we? :3</p>
+<p>We then define three methods, one FReply for the button – the other two for the Accept and Dismiss buttons.</p>
 
-<p>Notifications in Unreal Engine are really simply handled. In Unreal Engine, there is a module that greatly simplifies the process of generating them — It’s called the FSlateNotificationManager.</p>
+<p>A lot of the code here is already concepts we have covered in the first and second parts of this tutorial series - namely, FNotificationInfo struct and it’s capabilities. The new part here is ButtonDetails and creating a shared pointer to a notification so that we can access it later.</p>
 
-<p>It takes in a simple struct called FNotificationInfo which defines properties, like how long, what size and the message information that gets displayed. It can also be used for buttons and links — the second example in Part 2, will cover adding a link to the notifications too.</p>
+<p>Let’s start at the beginning of <strong>SpawnChoiceNotification()</strong>, the first thing that we do is take our pointer that we defined in our header and retrieve a shared pointer to it. We’ve defined this as a weak pointer initially because the notification itself may not exist anymore, we need to validate it.</p>
 
-<p>I’ll start by giving you the code for setting up the notification, and then I will go through and explain what’s going on!</p>
+<p>The <strong>.Pin()</strong> method converts a weak pointer to a shared pointer if it hasn’t expired. We then validate it on Line 109 before moving on. Otherwise, we leave the method with <strong>FReply::Handled();</strong></p>
 
-<p>Here’s our header file:</p>
+<p>Next is the usual creation of an FNotificationInfo so we can actually set up our notification. </p>
 
-<script src="https://gist.github.com/Sythenz/ba29c749929b3d9027f349ebc67ceb80.js"></script>
+<p>Now for the fun part! ButtonDetails is an Array of FNotificationButtonInfo structs. This struct type takes in localized strings for the button name, the tooltip and a callback to another method that takes on the behavior of that button - in this case, it is our <strong>AcceptClicked()</strong> and <strong>DismissClicked()</strong> methods respectively for handling both those states.</p>
 
-<p>And here’s our CPP:</p>
+<p>Another requirement is line 100, FireAndForget. This parameter ensures that our notification remains on screen until one of the buttons have been pressed so the user has time to make that choice.</p>
 
-<script src="https://gist.github.com/Sythenz/d21b29d1c566c28d754c748b73f28799.js"></script>
+<p>We do some more styling at line 102–108, as covered in previous tutorial parts, and then we move onto handling our notifications states.</p>
 
-<p>The first thing we do is preparing our button —
-In our Construct’s child slot we just create a new button, with some text and place it in a Horizontal box. This just generates a new button and layout in our widget so we have something to trigger our notifcations with.</p>
-
-<p>Last thing that is important is we define an FReply method. This is where our functionality for when our button is pressed, and is the delegate in OnClicked().</p>
-
-<p><img src="/assets/images/notification_spawn.png" alt="Our new button, within our widget and displayed in the plugin window." /></p>
-
-<h3 id="fnotificationinfo">FNotificationInfo</h3>
-<p>This is where most of our cool stuff happens! As I’ve said before, FNotificationInfo is a super nice struct that defines all of the behavior and text that appears within our notifications. We instantiate a new instance of a NotificationInfo struct, passing in a localized text string with our message.</p>
-
-<p>There are a bunch of parameters you can use intellisense to check out, but here’s some of the basic ones.</p>
-
-<script src="https://gist.github.com/Sythenz/db059cfc7e43ea29c0bf14af40463e42.js"></script>
-
-<p>Not all of these struct properties are just settings however, some we will see later like Hyperlink actually take in delegates. We’ll go over that soon.</p>
-
-<p>The only thing left is the actual <em>FSlateNotificationManager</em> itself.</p>
-
-<h3 id="fslatenotificationmanager">FSlateNotificationManager</h3>
-<p>By most comparisons, FSlateNotificationManager is actually a relatively simple class within Unreal Engine. It’s main purpose is to just display information passed in by the struct and make a nice little thingy at the corner of your editor.</p>
-
-<p>Checking out <em>NotificationManager.h</em>, you’ll find that it’s already well documented on it’s functionality in the comments, if you’re curious.</p>
-
-<p>Here’s where you can find it:
-<em>Engine\Source\Runtime\Slate\Public\Framework\Notifications\NotificationManager.h</em></p>
-
-<p>In our case, we are getting a reference to the manager, and calling AddNotification() which simply generates a widget and what it calls a Notification Area for displaying a stack of notifications. It does some magic, but one thing to note — Notifications are done on the Game Thread, just something to be more aware of for those of you curious.</p>
-
-<p>But to simplify:
-Line 34 of our CPP: We call <em>AddNotification</em> on our Notification Manager and it displays our cool new notification.</p>
-
-<p>Go ahead and compile, and let’s check it out. And yes, it’s highly spammable and fun to click — If you end up making a cookie clicker in Unreal Engine, let me know! XD</p>
-
-<p><img src="/assets/images/notification_spam.png" alt="(This is your conscience, do it. Make the Cookie Clicker.)" /></p>
-
-<p>And for now, that’s it for part one. We will build on-top of this existing mini-plugin in part two and three, part two will cover Hyperlinks and changing iconography of our little notifications!</p>
+<p>We need to set the NotificationPtr variable we have set in our header to the result of our created Notification on line 116. This is so that we can access that same notification later, should we decide to change existing text on the notification or do something else.</p>
 
         
       </section>
@@ -453,33 +422,6 @@ Line 34 of our CPP: We call <em>AddNotification</em> on our Notification Manager
       <div class="grid__wrapper">
         
           
-            
-
-
-
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <a href="/unreal/Notifications-in-Unreal-Engine-Part3/">
-
-          
-
-          <div class="archive__item-teaser">
-            <img src="/assets/images/teaser_notifications_part3.png" alt="">
-          </div>
-
-        </a>
-      
-    </article>
-  </div>
-
-
-          
-        
-          
         
           
         
@@ -500,6 +442,33 @@ Line 34 of our CPP: We call <em>AddNotification</em> on our Notification Manager
 
           <div class="archive__item-teaser">
             <img src="/assets/images/teaser_notifications_part2.png" alt="">
+          </div>
+
+        </a>
+      
+    </article>
+  </div>
+
+
+          
+        
+          
+            
+
+
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <a href="/unreal/Notifications-In-Unreal-Engine-Part1/">
+
+          
+
+          <div class="archive__item-teaser">
+            <img src="/assets/images/teaser_notifications_part1.png" alt="">
           </div>
 
         </a>
