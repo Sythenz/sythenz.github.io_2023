@@ -20,7 +20,7 @@ var store = [{
         "title": "Custom Details Panels in Unreal Engine C++ (FPropertyEditorModule)",
         "excerpt":"In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them. For this project, we are going to use UE4.24 but you...","categories": ["Unreal"],
         "tags": ["Unreal Engine","C++","Plugin Development","Written"],
-        "url": "/unreal/Custom-Details-Panels/",
+        "url": "/unreal/Custom-Details-Panels-in-C++/",
         "teaser": "/assets/images/teaser_customdetails.png"
       },{
         "title": "Anatomy of a Widget",
