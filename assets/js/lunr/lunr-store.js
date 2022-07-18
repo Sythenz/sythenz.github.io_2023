@@ -13,9 +13,15 @@ var store = [{
       },{
         "title": "Writing HLSL Code OUTSIDE The Custom Node in UE4",
         "excerpt":"Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3  ","categories": ["Unreal"],
-        "tags": ["Unreal Engine","Video"],
+        "tags": ["Unreal Engine","C++","Plugin Development","Video"],
         "url": "/unreal/Custom-Node-In-UE4/",
         "teaser": "https://i.ytimg.com/vi/V3BVsYV7ge0/maxresdefault.jpg"
+      },{
+        "title": "Quick Tip: Compiling Slate and Plugin Code Faster in Unreal Engine",
+        "excerpt":"Hey there my name is Alessa Baker, also known as Codekitten! Have you ever wondered how to compile your Slate and C++ Plugin Development Code faster? Here’s how!  ","categories": ["Unreal"],
+        "tags": ["Unreal Engine","C++","Plugin Development","Video"],
+        "url": "/unreal/Tip-Live-Update-For-Slate/",
+        "teaser": "https://i.ytimg.com/vi/p89Z5lVLNw0/maxresdefault.jpg"
       },{
         "title": "Case Study: Organizing Your Materials in Unreal Engine 4!",
         "excerpt":"In this tutorial, we will go through the prototype version of our Stylized Gradient material and take a Tech Artist approach to organizing and keeping our material graph clean so that understanding our Material Graph becomes easier for those who work with it in the future!  ","categories": ["Unreal"],
