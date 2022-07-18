@@ -154,6 +154,8 @@
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/about/">About</a>
             </li><li class="masthead__menu-item">
+              <a href="/tools/">Tools</a>
+            </li><li class="masthead__menu-item">
               <a href="/portfolio/">Portfolio</a>
             </li><li class="masthead__menu-item">
               <a href="/tutorials/">Tutorials</a>
@@ -170,6 +172,7 @@
         </button>
         <ul class="hidden-links hidden">
           <li class="masthead__menu-item"><a href="/about/" class="">About</a></li>
+          <li class="masthead__menu-item"><a href="/tools/" class="">Tools</a></li>
           <li class="masthead__menu-item"><a href="/portfolio/" class="">Portfolio</a></li>
           <li class="masthead__menu-item"><a href="/tutorials/" class="">Tutorials</a></li>
           <li class="masthead__menu-item"><a href="/creators/" class="">Creators</a></li>
@@ -332,17 +335,36 @@
     <div class="page__inner-wrap">
 
       
-      
-
-<div class="github">
-    <h4 id="github-repository">
-        Get Code from this Tutorial
-    </h4>
-    <a href = "https://github.com/Sythenz/CustomDetailsExample" target="_blank"><button class="github-button"><i class="fab fa-github"></i> Go to Repo</button></a>
-</div>
-
 
       <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+
+            
+<ul class="sidebarbuttons">
+                    
+    
+  
+    
+      <li>
+        <a href="https://github.com/Sythenz/CustomDetailsExample">
+          <button class="primarybutton">
+            <i class="fab fa-github"></i> Get Code from this Tutorial
+          </button>
+        </a>
+      </li>
+    
+
+  </ul>
+
+
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#specifying-our-custom-details">Specifying our custom Details</a></li><li><a href="#creating-our-details-widget">Creating our Details Widget</a></li><li><a href="#our-details-panel">Our Details Panel</a></li></ul>
+
+            </nav>
+
+          </aside>
         
         <p>In Unreal Engine, we can create our own Custom Details panels relatively easily by using the FPropertyEditorModule and passing it a custom class with listed UProperties instead of having to draw and generate our own Slate to display them.</p>
 

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://codekitten.me/tools/UE4Minimal/</loc>
+<lastmod>2019-01-01T00:00:00+01:00</lastmod>
+</url>
+<url>
 <loc>http://codekitten.me/unreal/Lower-Project-Size/</loc>
 <lastmod>2021-02-22T00:00:00+01:00</lastmod>
 </url>
@@ -45,6 +49,10 @@
 <lastmod>2022-07-04T00:00:00+02:00</lastmod>
 </url>
 <url>
+<loc>http://codekitten.me/tools/LiveUpdateForSlate/</loc>
+<lastmod>2022-07-11T00:00:00+02:00</lastmod>
+</url>
+<url>
 <loc>http://codekitten.me/about/</loc>
 </url>
 <url>
@@ -55,6 +63,9 @@
 </url>
 <url>
 <loc>http://codekitten.me/portfolio/</loc>
+</url>
+<url>
+<loc>http://codekitten.me/tools/</loc>
 </url>
 <url>
 <loc>http://codekitten.me/tutorials/</loc>

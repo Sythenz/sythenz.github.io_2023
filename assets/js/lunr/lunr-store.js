@@ -1,4 +1,10 @@
 var store = [{
+        "title": "UE4Minimal",
+        "excerpt":"UE4 Minimal is an attempt at a dark theme for Unreal Engine 4. Currently compatible with UE4.20 and up. This theme works by replacing images in UE4’s Engine/Content folder. Instructions Navigate to your Engine\\Content folder. Make a copy of these two folders: “Editor” and “Slate” this will be your backup...","categories": ["Tools"],
+        "tags": [],
+        "url": "/tools/UE4Minimal/",
+        "teaser": "/assets/images/teaser_ue4minimal.png"
+      },{
         "title": "How To Lower Your Unreal Engine Project File Size!",
         "excerpt":"Want to learn how to lower and optimize your Unreal Engine project file sizes? During one of my Twitch streams we investigated this. Here’s what we found!  ","categories": ["Unreal"],
         "tags": ["Unreal Engine","Video"],
@@ -64,4 +70,10 @@ var store = [{
         "tags": [],
         "url": "/portfolio/Chorus/",
         "teaser": "https://chorusthegame.com/media/KeyArtv2/CHORVS_FIN_HORIZ_093020-2560.jpg"
+      },{
+        "title": "Live Update for Slate",
+        "excerpt":"Live Update for Slate is a simple plugin that refreshes the editor layout and tabs when Live Coding is complete. Compiled for in UE4.27.2. Special thanks to Nick Darnell for the code assist! Instructions Place in Project/Plugins directory Enable plugin from Edit &gt; Plugins in Editor Go to Editor Preferences...","categories": ["Tools"],
+        "tags": [],
+        "url": "/tools/LiveUpdateForSlate/",
+        "teaser": "/assets/images/teaser_liveupdate.png"
       }]
