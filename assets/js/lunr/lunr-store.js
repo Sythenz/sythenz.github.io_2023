@@ -77,6 +77,12 @@ var store = [{
         "url": "/portfolio/Chorus/",
         "teaser": "https://chorusthegame.com/media/KeyArtv2/CHORVS_FIN_HORIZ_093020-2560.jpg"
       },{
+        "title": "Notifications in Unreal Engine (Part 3 — Buttons and Delegates)",
+        "excerpt":"Hey again! ❤️ Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons. Before we get started, as always. This tutorial works from the basis created in both parts one and...","categories": ["Unreal"],
+        "tags": ["Unreal Engine","C++","Written","Plugin Development"],
+        "url": "/unreal/Notifications-in-Unreal-Engine-Part-3/",
+        "teaser": "/assets/images/teaser_notifications_part3.png"
+      },{
         "title": "Live Update for Slate",
         "excerpt":"Live Update for Slate is a simple plugin that refreshes the editor layout and tabs when Live Coding is complete. Compiled for in UE4.27.2. Special thanks to Nick Darnell for the code assist! Instructions Place in Project/Plugins directory Enable plugin from Edit &gt; Plugins in Editor Go to Editor Preferences...","categories": ["Tools"],
         "tags": [],

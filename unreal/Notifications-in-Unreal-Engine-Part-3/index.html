@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Writing HLSL Code OUTSIDE The Custom Node in UE4 - Codekitten.me</title>
-<meta name="description" content="Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3">
+<!-- begin _includes/seo.html --><title>Notifications in Unreal Engine (Part 3 — Buttons and Delegates) - Codekitten.me</title>
+<meta name="description" content="Hey again! ❤️  Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
 
 
   <meta name="author" content="Alessa Baker">
@@ -22,33 +22,33 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Codekitten.me">
-<meta property="og:title" content="Writing HLSL Code OUTSIDE The Custom Node in UE4">
-<meta property="og:url" content="http://codekitten.me/unreal/Custom-Node-In-UE4/">
+<meta property="og:title" content="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)">
+<meta property="og:url" content="http://codekitten.me/unreal/Notifications-in-Unreal-Engine-Part-3/">
 
 
-  <meta property="og:description" content="Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3">
+  <meta property="og:description" content="Hey again! ❤️  Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
 
 
 
-  <meta property="og:image" content="https://i.ytimg.com/vi/V3BVsYV7ge0/maxresdefault.jpg">
+  <meta property="og:image" content="http://codekitten.me/assets/images/teaser_notifications_part3.png">
 
 
 
   <meta name="twitter:site" content="@Codekittah">
-  <meta name="twitter:title" content="Writing HLSL Code OUTSIDE The Custom Node in UE4">
-  <meta name="twitter:description" content="Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3">
-  <meta name="twitter:url" content="http://codekitten.me/unreal/Custom-Node-In-UE4/">
+  <meta name="twitter:title" content="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)">
+  <meta name="twitter:description" content="Hey again! ❤️  Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
+  <meta name="twitter:url" content="http://codekitten.me/unreal/Notifications-in-Unreal-Engine-Part-3/">
 
   
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://i.ytimg.com/vi/V3BVsYV7ge0/maxresdefault.jpg">
+    <meta name="twitter:image" content="http://codekitten.me/assets/images/teaser_notifications_part3.png">
   
 
   
 
 
 
-  <meta property="article:published_time" content="2021-02-25T00:00:00+01:00">
+  <meta property="article:published_time" content="2022-07-09T00:00:00+02:00">
 
 
 
@@ -59,7 +59,7 @@
   
 
 
-<link rel="canonical" href="http://codekitten.me/unreal/Custom-Node-In-UE4/">
+<link rel="canonical" href="http://codekitten.me/unreal/Notifications-in-Unreal-Engine-Part-3/">
 
 
 
@@ -127,7 +127,7 @@
 
   </head>
 
-  <body class="layout--video">
+  <body class="layout--single">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDZGBDK"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -186,11 +186,23 @@
 
     <div class="initial-content">
       
-<div class="page__video">
-    <div class="page__video__container">
-        <iframe src="https://www.youtube.com/embed/V3BVsYV7ge0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/teaser_notifications_part3.png" alt="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)" class="page__hero-image">
+  
+  
 </div>
+
 
 
 
@@ -315,23 +327,114 @@
   </div>
 
   <article  class="page h-entry"  itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Writing HLSL Code OUTSIDE The Custom Node in UE4">
-    <meta itemprop="description" content="Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3">
-    <meta itemprop="datePublished" content="2021-02-25T00:00:00+01:00">
+    <meta itemprop="headline" content="Notifications in Unreal Engine (Part 3 — Buttons and Delegates)">
+    <meta itemprop="description" content="Hey again! ❤️  Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.">
+    <meta itemprop="datePublished" content="2022-07-09T00:00:00+02:00">
     
 
     <div class="page__inner-wrap">
 
+      
+
       <section class="page__content e-content" itemprop="text">
         
-        <p>Learn how to create your own external Shader directory to store Unreal Shader Headers (HLSL) files, instead of using that pesky tiny custom node text box! :3</p>
+          <aside class="sidebar__right sticky">
 
+            
+<ul class="sidebarbuttons">
+                    
+    
+  
+    
+      <li>
+        <a href="https://github.com/Sythenz/UnrealNotificationsExample">
+          <button class="primarybutton">
+            <i class="fab fa-github"></i> Get Tutorial Code
+          </button>
+        </a>
+      </li>
+    
+
+  </ul>
+
+
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#setting-up">Setting up</a></li><li><a href="#pointers">Pointers!</a></li><li><a href="#fnotificationbuttoninfo">FNotificationButtonInfo</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#thank-you">Thank you!</a></li></ul>
+
+            </nav>
+
+          </aside>
         
+        <p>Hey again! ❤️ <br /> Welcome to the final part of covering Notifications in Unreal Engine. In this part, we will cover Notifications with delegates, or to put it simply a Notification with buttons.</p>
+
+<p>Before we get started, as always. This tutorial works from the basis created in both parts one and two. You can find those here, follow along with them and then come back here if you haven’t done so already.</p>
+
+<p><a href="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part1/">Notifications in Unreal Engine Part 1</a> <br />
+<a href="http://codekitten.me/unreal/Notifications-In-Unreal-Engine-Part-2/">Notifications in Unreal Engine Part 2</a></p>
+
+<h2 id="setting-up">Setting up</h2>
+
+<p>This tutorial will perhaps be a little more complex than the others before, so I would say an understanding of shared/weak and pointers in general would be really useful to look into first.</p>
+
+<p>So let’s start! As before, let’s go ahead and add to our <strong>SNotificationButtonsWidget</strong> header and cpp files and then I’ll break it down and describe what’s going on.</p>
+
+<p>.h (We add everything under Part 3, be sure to add the NotificationPtr too!)</p>
+
+<script src="https://gist.github.com/Sythenz/d91e6777f304baba75f77bab4f0072eb.js"></script>
+
+<p>.cpp</p>
+
+<script src="https://gist.github.com/Sythenz/87f514925260beac469d35ebdeb3a5b5.js"></script>
+
+<p>A note before we continue, you’ll see in the CPP file I’ve removed the first two parts methods for the sake of brevity and making this gist easier to understand. So just be careful copy pasting if you are!</p>
+
+<p>The first thing, just as before is in our Construct method, adding another <strong>SHorizontalBox</strong> slot with a button which links via the <strong>OnClicked()</strong> delegate to our FReply Method just the same as before. This should be some what intutive now.</p>
+
+<p>We then define three methods, one FReply for the button – the other two for the Accept and Dismiss buttons.</p>
+
+<p>A lot of the code here is already concepts we have covered in the first and second parts of this tutorial series - namely, <strong><a href="https://docs.unrealengine.com/5.0/en-US/API/Runtime/Slate/Widgets/Notifications/FNotificationInfo/" target="_blank">FNotificationInfo</a></strong> struct and it’s capabilities. The new part here is ButtonDetails and creating a shared pointer to a notification so that we can access it later.</p>
+
+<h2 id="pointers">Pointers!</h2>
+
+<p>Let’s start at the beginning of <strong>SpawnChoiceNotification()</strong>, the first thing that we do is take our pointer that we defined in our header and retrieve a shared pointer to it. We’ve defined this as a weak pointer initially because the notification itself may not exist anymore, we need to validate it.</p>
+
+<p>The <strong>.Pin()</strong> method converts a weak pointer to a shared pointer if it hasn’t expired. We then validate it on Line 109 before moving on. Otherwise, we leave the method with <strong>FReply::Handled();</strong></p>
+
+<p>Next is the usual creation of an FNotificationInfo so we can actually set up our notification. </p>
+
+<h2 id="fnotificationbuttoninfo">FNotificationButtonInfo</h2>
+
+<p>Now for the fun part! <strong>ButtonDetails</strong> is an Array of <strong><a href="https://docs.unrealengine.com/5.0/en-US/API/Runtime/Slate/Widgets/Notifications/FNotificationButtonInfo/" target="_blank">FNotificationButtonInfo</a></strong> structs. This struct type takes in localized strings for the button name, the tooltip and a callback to another method that takes on the behavior of that button - in this case, it is our <strong>AcceptClicked()</strong> and <strong>DismissClicked()</strong> methods respectively for handling both those states.</p>
+
+<p>Another requirement is line 100, FireAndForget. This parameter ensures that our notification remains on screen until one of the buttons have been pressed so the user has time to make that choice.</p>
+
+<p>We do some more styling at line 102–108, as covered in previous tutorial parts, and then we move onto handling our notifications states.</p>
+
+<p>We need to set the NotificationPtr variable we have set in our header to the result of our created Notification on line 116. This is so that we can access that same notification later, should we decide to change existing text on the notification or do something else.</p>
+
+<h2 id="buttons">Buttons</h2>
+
+<p>For both button callbacks, we will be ensuring first that we are able to <strong>.Pin()</strong> as we will be modifying them.</p>
+
+<p>Within the IsValid() if statement for each of these, you can call and do whatever logic you need when a button is pressed.</p>
+
+<p>For AcceptClicked() we first validate <strong>.Pin()</strong> and then call SetText() directly on our NotificationPin. If you need to change your notifications text at any point, this is how you do it - just ensure you pin first!</p>
+
+<p>We then Set the completion state, just to inform Unreal and anything else listening how this notification has ended, either with success, failiure etc.</p>
+
+<p>And then lastly, we can call <strong>ExpireAndFadeout()</strong> which does exactly as it says! It informs Unreal that the notification is done with, and begins a fade out animation. Parameters for these can be customized, these are ExpireDuration and FadeDuration, and are passed in to the FNotificationInfo when we create the notification.</p>
+
+<p>Our DismissClicked() is nearly exactly the same thing - except we use a Completion State of <em>CS_None</em> to inform Unreal that we just canceled out of this notification.</p>
+
+<h2 id="thank-you">Thank you!</h2>
+
+<p>Thank you for reading this far! And I hope that you learned a thing or two about notifications. I often find that these are over-looked in plugin development as they really can open an opportunity for User Experience and feedback from developers who will be working with your tools. They’re not too complicated!</p>
+
+
         
       </section>
       
-      
-
       
 
 <footer class="page__meta patreon">
@@ -353,16 +456,15 @@
     </div>
 
     
-
   </article>
 
   
-  <div class="page__related">
-    <h2 class="page__related-title">You may also enjoy</h2>
-    <div class="grid__wrapper">
-      
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
         
           
+            
 
 
 
@@ -386,41 +488,14 @@
   </div>
 
 
-        
-      
+          
         
           
-
-
-
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <a href="/unreal/Notifications-in-Unreal-Engine-Part-3/">
-
-          
-
-          <div class="archive__item-teaser">
-            <img src="/assets/images/teaser_notifications_part3.png" alt="">
-          </div>
-
-        </a>
-      
-    </article>
-  </div>
-
-
-        
-      
-        
-      
-        
-      
         
           
+        
+          
+            
 
 
 
@@ -444,10 +519,10 @@
   </div>
 
 
-        
-      
+          
         
           
+            
 
 
 
@@ -471,13 +546,16 @@
   </div>
 
 
+          
         
-      
+          
         
-      
+          
+        
+      </div>
     </div>
-  </div>
   
+
 
 </div>
 
